@@ -31,8 +31,7 @@
       <h2>Contact</h2>
       <p>Let's work together! Feel free to reach out via the form below or directly by email.</p>
     </div>
-    <form class="contact-form" autocomplete="off">
-      <form class="contact-form" action="https://formspree.io/f/mgvlpbpo" method="POST" autocomplete="off">
+  <form class="contact-form" action="https://formspree.io/f/mgvlpbpo" method="POST" autocomplete="off" id="contactForm">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required placeholder="eg. John Smith" />
         <label for="email">Email</label>
@@ -41,6 +40,21 @@
         <textarea id="message" name="message" rows="5" required placeholder="What do you need? Goals, timeline, links..."></textarea>
         <button type="submit">Send Message</button>
       </form>
+      <!-- Popups -->
+      <div id="popup-success" class="popup-message" style="display:none;">
+        <div class="popup-content">
+          <span class="popup-close" onclick="closePopup('popup-success')">&times;</span>
+          <h3>Message sent!</h3>
+          <p>Thank you for reaching out. I will reply as soon as possible.</p>
+        </div>
+      </div>
+      <div id="popup-error" class="popup-message" style="display:none;">
+        <div class="popup-content">
+          <span class="popup-close" onclick="closePopup('popup-error')">&times;</span>
+          <h3>Sending failed</h3>
+          <p>Please try again, or contact me via <a href='https://www.linkedin.com/in/karolinazaras' target='_blank'>LinkedIn</a> or <a href='mailto:karogorza@gmail.com'>email</a>.</p>
+        </div>
+      </div>
     <div class="contact-info">
   <p><img src="assets/images/footer/gmail.svg" alt="Gmail" style="width:18px;height:18px;vertical-align:middle;margin-right:6px;" />
     <a href="mailto:karogorza@gmail.com" id="contact-email" style="cursor:pointer;">karogorza@gmail.com</a>
@@ -48,7 +62,73 @@
   </p>
   <p class="linkedin-row"><img src="assets/images/footer/linkedin.svg" alt="LinkedIn" style="width:18px;height:18px;vertical-align:middle;" /><a href="https://www.linkedin.com/in/karolinazaras" target="_blank">LinkedIn – My profile</a></p>
     </div>
+  <style>
+    .popup-message {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .popup-content {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(149,84,156,0.13);
+      padding: 32px 32px 24px 32px;
+      max-width: 90vw;
+      min-width: 320px;
+      text-align: center;
+      position: relative;
+    }
+    .popup-content h3 { margin-top: 0; color: #95549c; }
+    .popup-content p { color: #222; }
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 2rem;
+      color: #95549c;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1;
+    }
+    .popup-content a { color: #95549c; text-decoration: underline; }
+    @media (max-width: 500px) {
+      .popup-content { min-width: 0; padding: 18px 6vw 12px 6vw; }
+    }
+  </style>
   <script>
+    function closePopup(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    // Obsługa wysyłki formularza z popupami
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      if(form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var data = new FormData(form);
+          fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          })
+          .then(function(response) {
+            if(response.ok) {
+              document.getElementById('popup-success').style.display = 'flex';
+              form.reset();
+            } else {
+              document.getElementById('popup-error').style.display = 'flex';
+            }
+          })
+          .catch(function() {
+            document.getElementById('popup-error').style.display = 'flex';
+          });
+        });
+      }
+    });
     const email = document.getElementById('contact-email');
     const tooltip = document.getElementById('email-tooltip');
     if(email) {
