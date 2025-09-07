@@ -322,7 +322,7 @@ p {
 
 .about-text p {
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 2;
   margin-bottom: 16px;
 }
 
@@ -330,7 +330,8 @@ p {
    Efekty typograficzne (banner)
 ======================================== */
 .fade-text { position: relative; }
-.fade-main { transition: opacity 2s ease; }
+.fade-main { transition: opacity 2s ease; 
+ line-height: 1.6;}
 .fade-text:hover .fade-main { opacity: .1; }
 .keep { position: relative; z-index: 1; }
 
@@ -761,6 +762,7 @@ p {
   }
 
   .text-content,
+
   .image-content {
     max-width: 100%;
   }
