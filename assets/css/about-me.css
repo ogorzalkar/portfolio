@@ -71,6 +71,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  line-height: 24px;
 }
 /* Styl dla (Intership) w Experience */
 .exp-internship {
@@ -201,7 +202,7 @@
   padding: 12px 0;
   font-family: 'Roboto', sans-serif;
   font-size: 0.97rem;
-  color: #222;
+  color: #555;
   font-weight: 500;
   display: flex;
   align-items: center;
