@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "box-tie-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title> Tie box | Projects | Karolina Ogorzalek</title>
@@ -174,6 +169,11 @@
         });
       }
     });
+  </script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/box-tie-mobile.html";
+    }
   </script>
 </body>
 </html>
