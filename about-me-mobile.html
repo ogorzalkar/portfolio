@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,20 @@
       background-color: #fff;
       margin: 0;
       font-size: 16px;
-      padding-top: 64px !important;
+      /* USUŃ padding-top! */
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 100;
+    }
+    .about-section,
+    .principles-section,
+    .experience-bg,
+    .project-footer-bar {
+      margin-top: 64px;
     }
     @media (min-width: 771px) { body { max-width: 480px; margin: 0 auto; } }
     .project-footer-bar { display: flex !important; justify-content: center !important; grid-template-columns: none !important; }
