@@ -112,6 +112,49 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<style>
+/* Ukryj menu mobilne domyślnie */
+.mobile-nav-links {
+  display: none;
+}
+
+/* Pokazuj menu mobilne po kliknięciu hamburgera */
+.mobile-nav-links.is-open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  background: #fff;
+  width: 100vw;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  z-index: 999;
+}
+
+/* Na desktopie pokazuj .nav-links, na mobile .mobile-nav-links */
+@media (max-width: 770px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-nav-links {
+    display: none;
+  }
+  .mobile-nav-links.is-open {
+    display: flex;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+}
+@media (min-width: 771px) {
+  .mobile-nav-links {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: none;
+  }
+}
+</style>
 
 
 </body>
