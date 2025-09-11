@@ -1,0 +1,169 @@
+<!-- File: projects/dymek.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if (window.innerWidth <= 770) {
+      window.location.href = "babel-mobile.html";
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Bąbel | Projects | Karolina Ogorzalek</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Kotwica do scroll-to-top -->
+  <div id="top"></div>
+
+  <!-- Nav (nowoczesna, responsywna z hamburgerem) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+          <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+          <span class="logo-text">Portfolio</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="mobile-menu" class="mobile-nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <section class="projects-section">
+    <!-- Header: breadcrumbs po lewej, tytuł wycentrowany -->
+    <div class="projects-header">
+      <p class="breadcrumbs">
+        <span class="crumb-current">Bąbel</span>
+      </p>
+      <h2>Bąbel</h2>
+      <span aria-hidden="true"></span>
+    </div>
+
+    <!-- Intro -->
+    <div class="project-intro">
+      <h3>Logo Design</h3>
+      <p>Bąbel 0 kcal is a brand of flavored sparkling water designed to embody lightness, freshness, and guilt-free pleasure. The minimalist logo and visual identity reflect the product’s character—clean, natural, and energetic. The name “Bąbel” (meaning "bubble" in Polish) captures the sparkling sensation and friendly, playful tone of the brand. </p>
+    </div>
+
+    <!-- Hero -->
+    <div class="project-hero">
+      <img src="assets/images/project/Brand/Babel/kafel-babel.png" alt="Bąbel - cover" loading="eager" decoding="async" />
+    </div>
+
+    
+
+          </div>
+
+        <div class="changes-bg">
+          <div class="changes-wrap">
+            <div class="project-intro">
+              <h3>Logo design</h3>
+              <p>Water label series—color-coded flavors with simple illustrations, a bubbly logotype, and a clear layout highlighting “0 kcal.”</p>
+            </div>
+            <div class="mintful-logo-wide">
+              <img src="assets/images/project/Brand/Babel/logo-babel.png" alt="Mintful logo wide">
+            </div>
+        
+
+  <!-- Back Label section-->
+  <div id="concept-description-of-labels"></div>
+      <div class="changes-bg">
+        <div class="changes-wrap">
+          <div class="project-intro">
+            <h3 id="label-design" style="scroll-margin-top:100px;">Concept Description of labels <label for=""></label></h3>
+            <p>A clean and minimal design created to introduce new tea flavour combinations.</p>
+          </div>
+            <div class="mintful-logo-wide">
+              <img src="assets/images/project/Brand/Babel/etykietki.png" alt="Mintful logo wide">
+            </div>
+              </div>
+        </div>
+      </div>
+
+       <!-- Bottles -->
+    <div class="project-hero">
+      <img src="assets/images/project/Brand/Babel/cans-mockup.png" alt="Mintful - cover" loading="eager" decoding="async" />
+    </div>
+
+
+       <!-- Lifestyle-->
+      <div class="changes-bg">
+        <div class="changes-wrap">
+          <div class="project-intro">
+            <h3>Lifestyle imagery <label for=""></label></h3>
+            <h3> <label for=""></label></h3>
+            <p>Pure fruit refreshment, zero sugar, naturally inspired.</p>
+          </div>
+            <div class="babel-lifestyle-row" style="display:flex; gap:32px; justify-content:center; align-items:center;">
+              <div class="mintful-logo-wide">
+                <img src="assets/images/project/Brand/Babel/lifestyle-2.png" alt="Mintful lifestyle" />
+              </div>
+              <div class="mintful-logo-wide">
+                <img src="assets/images/project/Brand/Babel/lifestyle.png" alt="Mintful lifestyle" />
+              </div>
+            </div>
+              </div>
+        </div>
+      </div>
+
+    
+    <!-- Dolny pasek przycisków -->
+    <div class="project-footer-bar" style="display:flex; justify-content:center; align-items:center; max-width:1200px; margin:72px auto 32px;">
+      <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+    </div>
+  </section>
+
+  <!-- Footer (wstrzykiwany) -->
+  <div data-footer></div>
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll to top
+      document.querySelectorAll('.js-to-top').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+      // Hamburger menu
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
+        });
+        // Zamknij menu po kliknięciu w link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
