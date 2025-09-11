@@ -2,23 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "renova-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Renova | Projects | Karolina Ogorzalek</title>
-
-  <!-- Base styles -->
   <link rel="stylesheet" href="assets/css/main.css" />
-  <!-- This page styles -->
   <link rel="stylesheet" href="assets/css/projects.css" />
-  <!-- Shared footer styles -->
   <link rel="stylesheet" href="assets/css/footer.css" />
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -203,39 +192,10 @@
       </div>
   </section>
 
-  <!-- Footer (wstrzykiwany z partiala) -->
+  <!-- Footer (wstrzykiwany) -->
   <div data-footer></div>
-
-  <!-- ===== Scripts ===== -->
-  <!-- Carousel -->
-  <script>
-    (function () {
-      const carousels = document.querySelectorAll('.project-card.carousel');
-      carousels.forEach((carousel) => {
-        const track  = carousel.querySelector('.carousel-track');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prev   = carousel.querySelector('.carousel-prev');
-        const next   = carousel.querySelector('.carousel-next');
-        const dots   = carousel.querySelectorAll('.carousel-dots button');
-        let index = 0;
-
-        function update(i) {
-          index = (i + slides.length) % slides.length;
-          const offset = carousel.clientWidth * index;
-          track.style.transform = `translateX(-${offset}px)`;
-          dots.forEach((d, j) => d.classList.toggle('is-active', j === index));
-        }
-
-        prev && prev.addEventListener('click', () => update(index - 1));
-        next && next.addEventListener('click', () => update(index + 1));
-        dots.forEach((d, i) => d.addEventListener('click', () => update(i)));
-        window.addEventListener('resize', () => update(index));
-        update(0);
-      });
-    })();
-  </script>
-
-  <!-- Smooth scroll -->
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script src="assets/js/video-popup.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.js-to-top').forEach(btn => {
@@ -244,54 +204,7 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
-    });
-  </script>
-
-  <!-- Modal do powiększania video -->
-<div id="videoModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
-  <div style="position:relative; max-width:90vw; max-height:90vh;">
-    <button id="videoModalClose" style="position:absolute; top:-32px; right:0; background:none; border:none; color:#fff; font-size:32px; cursor:pointer;">&times;</button>
-    <video id="videoPlayer" controls style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.5);"></video>
-  </div>
-</div>
-<script src="assets/js/video-popup.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.project-card[data-tag*="motion"], .project-card[data-tag*="video"], .project-card.is-video').forEach(card => {
-      card.addEventListener('click', function(e) {
-        const video = card.querySelector('video');
-        if (video && video.src) {
-          e.preventDefault();
-          const modal = document.getElementById('videoModal');
-          const player = document.getElementById('videoPlayer');
-          player.src = video.src;
-          modal.style.display = 'flex';
-          player.play();
-        }
-      });
-    });
-    document.getElementById('videoModalClose').onclick = function() {
-      const modal = document.getElementById('videoModal');
-      const player = document.getElementById('videoPlayer');
-      player.pause();
-      player.src = '';
-      modal.style.display = 'none';
-    };
-    document.getElementById('videoModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        const player = document.getElementById('videoPlayer');
-        player.pause();
-        player.src = '';
-        this.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-
-  <!-- Hamburger menu logic -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+      // Hamburger menu
       const hamburger = document.querySelector('.nav-hamburger');
       const mobileMenu = document.getElementById('mobile-menu');
       if (hamburger && mobileMenu) {
@@ -312,9 +225,10 @@
       }
     });
   </script>
-  <!-- Footer mount + script -->
-  <div data-footer></div>
-  <script src="assets/js/footer-inline.js"></script>
-
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/renova-mobile.html";
+    }
+  </script>
 </body>
 </html>
