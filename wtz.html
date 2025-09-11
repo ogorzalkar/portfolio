@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "wtz-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WTZ | Projects | Karolina Ogorzalek</title>
@@ -166,35 +161,9 @@
 
   <!-- Footer (wstrzykiwany) -->
   <div data-footer></div>
-
-  <!-- ===== Scripts ===== -->
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script src="assets/js/video-popup.js" defer></script>
   <script>
-    (function () {
-      const carousels = document.querySelectorAll('.project-card.carousel');
-      carousels.forEach((carousel) => {
-        const track  = carousel.querySelector('.carousel-track');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prev   = carousel.querySelector('.carousel-prev');
-        const next   = carousel.querySelector('.carousel-next');
-        const dots   = carousel.querySelectorAll('.carousel-dots button');
-        let index = 0;
-
-        function update(i) {
-          index = (i + slides.length) % slides.length;
-          const offset = carousel.clientWidth * index;
-          track.style.transform = `translateX(-${offset}px)`;
-          dots.forEach((d, j) => d.classList.toggle('is-active', j === index));
-        }
-
-        prev && prev.addEventListener('click', () => update(index - 1));
-        next && next.addEventListener('click', () => update(index + 1));
-        dots.forEach((d, i) => d.addEventListener('click', () => update(i)));
-        window.addEventListener('resize', () => update(index));
-        update(0);
-      });
-    })();
-
-    // Smooth scroll dla „↑ Scroll to top”
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.js-to-top').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -202,7 +171,6 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
-    });
       // Hamburger menu
       const hamburger = document.querySelector('.nav-hamburger');
       const mobileMenu = document.getElementById('mobile-menu');
@@ -222,12 +190,12 @@
           });
         });
       }
+    });
   </script>
-
-  <!-- Footer loader -->
-  <script src="assets/js/footer-inline.js" defer></script>
-
-  <!-- (opcjonalnie) jeśli używasz popupu do wideo -->
-  <script src="assets/js/video-popup.js" defer></script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/wtz-mobile.html";
+    }
+  </script>
 </body>
 </html>
