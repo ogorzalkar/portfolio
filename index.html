@@ -26,6 +26,14 @@
       <a href="about-me.html">About me</a>
       <a href="contact.html">Contact</a>
     </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div id="mobile-menu" class="mobile-nav-links">
+      <a href="projects.html">Projects</a>
+      <a href="about-me.html">About me</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 </nav>
   
@@ -81,6 +89,28 @@
   <!-- Footer mount + script -->
   <div data-footer></div>
   <script src="assets/js/footer-inline.js" defer></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('is-open');
+      hamburger.classList.toggle('is-open');
+    });
+    // Zamknij menu po kliknięciu w link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+});
+</script>
 
 
 
