@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "biedronka-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Biedronka | Projects | Karolina Ogorzalek</title>
@@ -526,83 +521,88 @@
     });
   </script>
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const frame = document.querySelector('.phone-mockup .phone-frame');
-  if (!frame) return;
-  const slides = frame.querySelectorAll('.pm-slide');
-  const prev = document.querySelector('.pm-btn.pm-prev');
-  const next = document.querySelector('.pm-btn.pm-next');
-  let index = 0;
+    document.addEventListener('DOMContentLoaded', function() {
+      const frame = document.querySelector('.phone-mockup .phone-frame');
+      if (!frame) return;
+      const slides = frame.querySelectorAll('.pm-slide');
+      const prev = document.querySelector('.pm-btn.pm-prev');
+      const next = document.querySelector('.pm-btn.pm-next');
+      let index = 0;
 
-  function showSlide(i) {
-    slides.forEach((slide, j) => {
-      slide.classList.toggle('is-active', j === i);
-    });
-  }
-
-  prev.addEventListener('click', function() {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-  });
-
-  next.addEventListener('click', function() {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  });
-
-  showSlide(index);
-});
-</script>
-<script>
-// Multi-carousel support for shakeomat and product catalog carousels
-document.addEventListener('DOMContentLoaded', function() {
-  function setupCarousel(carouselSelector) {
-    var carousel = document.querySelector(carouselSelector);
-    if (!carousel) return;
-    var track = carousel.querySelector('.shakeo-carousel-track');
-    var slides = track.querySelectorAll('.shakeo-slide');
-    var prev = carousel.querySelector('.shakeo-btn.shakeo-prev');
-    var next = carousel.querySelector('.shakeo-btn.shakeo-next');
-    var index = 0;
-
-    function showSlide(i) {
-      slides.forEach((slide, j) => {
-        slide.classList.toggle('is-active', j === i);
-      });
-    }
-
-    prev.addEventListener('click', function() {
-      index = (index - 1 + slides.length) % slides.length;
-      showSlide(index);
-    });
-
-    next.addEventListener('click', function() {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    });
-
-    showSlide(index);
-  }
-
-  // Show/hide carousels only on mobile
-  function toggleCarousels() {
-    var carousels = document.querySelectorAll('.shakeomat-carousel');
-    carousels.forEach(function(carousel) {
-      if (window.innerWidth <= 770) {
-        carousel.style.display = 'flex';
-      } else {
-        carousel.style.display = 'none';
+      function showSlide(i) {
+        slides.forEach((slide, j) => {
+          slide.classList.toggle('is-active', j === i);
+        });
       }
+
+      prev.addEventListener('click', function() {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+      });
+
+      next.addEventListener('click', function() {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      });
+
+      showSlide(index);
     });
-  }
+  </script>
+  <script>
+    // Multi-carousel support for shakeomat and product catalog carousels
+    document.addEventListener('DOMContentLoaded', function() {
+      function setupCarousel(carouselSelector) {
+        var carousel = document.querySelector(carouselSelector);
+        if (!carousel) return;
+        var track = carousel.querySelector('.shakeo-carousel-track');
+        var slides = track.querySelectorAll('.shakeo-slide');
+        var prev = carousel.querySelector('.shakeo-btn.shakeo-prev');
+        var next = carousel.querySelector('.shakeo-btn.shakeo-next');
+        var index = 0;
 
-  setupCarousel('.shakeomat-carousel'); // legacy single (Shakeomat)
-  setupCarousel('.product-catalog-carousel');
-  setupCarousel('.product-subcat-carousel');
+        function showSlide(i) {
+          slides.forEach((slide, j) => {
+            slide.classList.toggle('is-active', j === i);
+          });
+        }
 
-  toggleCarousels();
-  window.addEventListener('resize', toggleCarousels);
-});
-</script>
+        prev.addEventListener('click', function() {
+          index = (index - 1 + slides.length) % slides.length;
+          showSlide(index);
+        });
+
+        next.addEventListener('click', function() {
+          index = (index + 1) % slides.length;
+          showSlide(index);
+        });
+
+        showSlide(index);
+      }
+
+      // Show/hide carousels only on mobile
+      function toggleCarousels() {
+        var carousels = document.querySelectorAll('.shakeomat-carousel');
+        carousels.forEach(function(carousel) {
+          if (window.innerWidth <= 770) {
+            carousel.style.display = 'flex';
+          } else {
+            carousel.style.display = 'none';
+          }
+        });
+      }
+
+      setupCarousel('.shakeomat-carousel'); // legacy single (Shakeomat)
+      setupCarousel('.product-catalog-carousel');
+      setupCarousel('.product-subcat-carousel');
+
+      toggleCarousels();
+      window.addEventListener('resize', toggleCarousels);
+    });
+  </script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/biedronka-mobile.html";
+    }
+  </script>
 </body>
 </html>
