@@ -2,9 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Uniwersalny redirect na wersję mobilną (z wyjątkiem projects.html)
+    (function() {
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      var path = window.location.pathname;
+      var file = path.substring(path.lastIndexOf('/')+1);
+      var base = file.replace(/\.html$/, '');
+      if (isMobile && !/^projects(\.|$)/.test(base) && !/-mobile$/.test(base)) {
+        var mobileFile = base + '-mobile.html';
+        if (window.location.pathname.indexOf('-mobile.html') === -1) {
+          window.location.replace(mobileFile + window.location.search + window.location.hash);
+        }
+      }
+    })();
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Phoenix | Projects | Karolina Ogorzalek</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/projects.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
@@ -73,31 +90,39 @@
           <h3>Logo</h3>
           <p>Logo redesign of SERVPRO (Phoenix Recovery).</p>
         </div>
+        <!-- Grid tylko dla grafik -->
         <div class="navbars-grid">
           <div class="navbars-col">
             <div class="navbars-caption">Before</div>
             <div class="navbars-row">
               <img src="assets/images/project/Brand/Phoenix/logo-1.png" alt="Logo before redesign" width="220" height="60">
             </div>
-              <ul class="navbars-list">
-                <li>Overcrowded with too much text</li>
-                <li>Poor visual hierarchy – hard to scan quickly</li>
-                <li>Dated color scheme (green + orange overload)</li>
-                <li>Logo blends into background – lacks contrast</li>
-                <li>Feels more like a flyer than a business card</li>
-              </ul>
           </div>
           <div class="navbars-col">
             <div class="navbars-caption">After</div>
             <div class="navbars-row">
               <img src="assets/images/project/Brand/Phoenix/logo-2.png" alt="Logo after redesign" width="220" height="60">
             </div>
-              <ul class="navbars-list">
-                <li>Clear hierarchy – name, role, contact info</li>
-                <li>Strong brand colors and professional typography</li>
-                <li>Visual balance – nothing feels crowded</li>
-                <li>Personal touch with illustrated contact icon</li>
-              </ul>
+          </div>
+        </div>
+        <!-- Grid tylko dla punktów listy, wyśrodkowany grid, tekst w li do lewej -->
+        <div class="navbars-grid" style="justify-content: center;">
+          <div class="navbars-col" style="align-items: center;">
+            <ul class="navbars-list" style="text-align:left; max-width:600px;">
+              <li>Overcrowded with too much text</li>
+              <li>Poor visual hierarchy – hard to scan quickly</li>
+              <li>Dated color scheme (green + orange overload)</li>
+              <li>Logo blends into background – lacks contrast</li>
+              <li>Feels more like a flyer than a business card</li>
+            </ul>
+          </div>
+          <div class="navbars-col" style="align-items: center;">
+            <ul class="navbars-list" style="text-align:left; max-width:600px;">
+              <li>Clear hierarchy – name, role, contact info</li>
+              <li>Strong brand colors and professional typography</li>
+              <li>Visual balance – nothing feels crowded</li>
+              <li>Personal touch with illustrated contact icon</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -110,32 +135,40 @@
           <h3>Business card</h3>
           <p>Business card redesign of SERVPRO (Phoenix Recovery).</p>
         </div>
+        <!-- Grid tylko dla grafik -->
         <div class="navbars-grid">
           <div class="navbars-col">
             <div class="navbars-caption">Before</div>
             <div class="navbars-row">
-              <img src="assets/images/project/Brand/Phoenix/business-card-1.png" alt="Logo before redesign" width="220" height="60">
+              <img src="assets/images/project/Brand/Phoenix/business-card-1.png" alt="Business card before redesign" width="220" height="60">
             </div>
-              <ul class="navbars-list">
-                <li>No clear meaning or emotion</li>
-                <li>Generic, unclear name</li>
-                <li>Basic, outdated logo</li>
-                <li>Flat colors, low impact</li>
-                <li>No brand story or identity</li>
-              </ul>
           </div>
           <div class="navbars-col">
             <div class="navbars-caption">After</div>
             <div class="navbars-row">
-              <img src="assets/images/project/Brand/Phoenix/business-card-2.png" alt="Logo after redesign" width="220" height="60">
+              <img src="assets/images/project/Brand/Phoenix/business-card-2.png" alt="Business card after redesign" width="220" height="60">
             </div>
-              <ul class="navbars-list">
-                <li>Powerful symbolism – rising from the ashes</li>
-                <li>Clear & emotional name – “Recovery”</li>
-                <li>Logo combines house, flame & phoenix</li>
-                <li>Bold, professional color scheme</li>
-                <li>Built-in brand story: rise from the ashes</li>
-              </ul>
+          </div>
+        </div>
+        <!-- Grid tylko dla punktów listy, wyśrodkowany grid, tekst w li do lewej -->
+        <div class="navbars-grid" style="justify-content: center;">
+          <div class="navbars-col" style="align-items: center;">
+            <ul class="navbars-list" style="text-align:left; max-width:600px;">
+              <li>No clear meaning or emotion</li>
+              <li>Generic, unclear name</li>
+              <li>Basic, outdated logo</li>
+              <li>Flat colors, low impact</li>
+              <li>No brand story or identity</li>
+            </ul>
+          </div>
+          <div class="navbars-col" style="align-items: center;">
+            <ul class="navbars-list" style="text-align:left; max-width:600px;">
+              <li>Powerful symbolism – rising from the ashes</li>
+              <li>Clear & emotional name – “Recovery”</li>
+              <li>Logo combines house, flame & phoenix</li>
+              <li>Bold, professional color scheme</li>
+              <li>Built-in brand story: rise from the ashes</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -225,9 +258,35 @@
 
   <!-- Footer (wstrzykiwany) -->
   <div data-footer></div>
-  <script src="assets/js/footer-inline.js" defer></script>
-  <script src="assets/js/video-popup.js" defer></script>
+
+  <!-- ===== Scripts ===== -->
   <script>
+    (function () {
+      const carousels = document.querySelectorAll('.project-card.carousel');
+      carousels.forEach((carousel) => {
+        const track  = carousel.querySelector('.carousel-track');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prev   = carousel.querySelector('.carousel-prev');
+        const next   = carousel.querySelector('.carousel-next');
+        const dots   = carousel.querySelectorAll('.carousel-dots button');
+        let index = 0;
+
+        function update(i) {
+          index = (i + slides.length) % slides.length;
+          const offset = carousel.clientWidth * index;
+          track.style.transform = `translateX(-${offset}px)`;
+          dots.forEach((d, j) => d.classList.toggle('is-active', j === index));
+        }
+
+        prev && prev.addEventListener('click', () => update(index - 1));
+        next && next.addEventListener('click', () => update(index + 1));
+        dots.forEach((d, i) => d.addEventListener('click', () => update(i)));
+        window.addEventListener('resize', () => update(index));
+        update(0);
+      });
+    })();
+
+    // Smooth scroll dla „↑ Scroll to top”
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.js-to-top').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -235,6 +294,7 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
+    });
       // Hamburger menu
       const hamburger = document.querySelector('.nav-hamburger');
       const mobileMenu = document.getElementById('mobile-menu');
@@ -254,12 +314,12 @@
           });
         });
       }
-    });
   </script>
-  <script>
-    if (window.innerWidth <= 770 || screen.width <= 770) {
-      window.location.href = "/portfolio/phoenix-mobile.html";
-    }
-  </script>
+
+  <!-- Footer loader -->
+  <script src="assets/js/footer-inline.js" defer></script>
+
+  <!-- (opcjonalnie) jeśli używasz popupu do wideo -->
+  <script src="assets/js/video-popup.js" defer></script>
 </body>
 </html>
