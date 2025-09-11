@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renova | Mobile</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    .project-grid .project-card {
+      margin: 0 0 24px 0 !important;
+    }
+    .project-grid .project-card:last-child {
+      margin-bottom: 0 !important;
+    }
+    .carousel-arrow.left {
+      left: 4px !important;
+      z-index: 20 !important;
+      background: #fff !important;
+      color: #222 !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18) !important;
+      border: 2px solid #e3e3e3 !important;
+      opacity: 1 !important;
+    }
+    .carousel-arrow.left:before {
+      content: '';
+      display: block;
+    }
+    .carousel-track {
+      position: relative;
+    }
+    .carousel-slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+    .carousel-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    body {
+      background-color: #fff;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='M20 0H0V20' fill='none' stroke='%23e3e3e3' stroke-width='0.5'/></svg>");
+      background-repeat: repeat;
+      background-size: 10px 10px;
+      margin: 0;
+      font-size: 16px;
+      padding-top: 64px !important;
+    }
+    .navbar { position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; }
+    .project-footer-bar { display: flex !important; justify-content: center !important; grid-template-columns: none !important; }
+    .project-footer-bar .back { display: none !important; }
+    .project-grid, .project-mosaic, .project-hero, .project-hero-2 { max-width: 100vw !important; }
+    .project-card, .project-hero img, .project-hero-2 img, .project-mosaic img { width: 100% !important; max-width: 100vw !important;  }
+    .project-intro { margin-left: 8px !important; margin-right: 8px !important; }
+    .projects-header { margin-bottom: 24px !important; }
+    @media (min-width: 771px) { body { max-width: 480px; margin: 0 auto; } }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+          <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+          <span class="logo-text">Portfolio</span>
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="mobile-menu" class="mobile-nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <section class="projects-section">
+    <div class="projects-header">
+      <p class="breadcrumbs">
+        <a class="crumb-back" href="projects.html#all">Projects</a>
+        <span class="crumb-sep">›</span>
+        <span class="crumb-current">Renova</span>
+      </p>
+      <h2>Renova</h2>
+    </div>
+    <div class="project-intro">
+      <h3>Facebook Social Media Post Ideas</h3>
+      <p>Post Ideas for Renova – A Company Selling Construction, Renovation, and Gardening Products.</p>
+    </div>
+    <div class="project-hero">
+      <img src="assets/images/project/SM/Renova/kafel-renova.jpg" alt="Renova – cover" loading="eager" decoding="async" />
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Renova/1-1.jpg" alt="Renova post 1" />
+      </div>
+      <div class="project-card">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Renova/2-1.png" alt="Renova post 2" />
+      </div>
+      <!-- Karuzela 1: 4 slajdy, strzałki -->
+      <div class="project-card mobile-carousel" style="max-width:420px;margin:24px auto 0 auto;position:relative;">
+        <button class="carousel-arrow left" tabindex="0" aria-label="Poprzednie zdjęcie" style="position:absolute;top:50%;left:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10094;</button>
+        <div class="carousel-track" style="aspect-ratio:1/1;position:relative;width:100%;overflow:hidden;border-radius:8px;">
+          <img class="carousel-slide is-active project-thumb" src="assets/images/project/SM/Renova/3-1.png" alt="Renova post 3-1" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+          <img class="carousel-slide project-thumb" src="assets/images/project/SM/Renova/3-2.png" alt="Renova post 3-2" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+          <img class="carousel-slide project-thumb" src="assets/images/project/SM/Renova/3-3.png" alt="Renova post 3-3" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+          <img class="carousel-slide project-thumb" src="assets/images/project/SM/Renova/3-4.png" alt="Renova post 3-4" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+        </div>
+        <button class="carousel-arrow right" tabindex="0" aria-label="Następne zdjęcie" style="position:absolute;top:50%;right:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10095;</button>
+      </div>
+      <div class="project-card">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Renova/4-1.png" alt="Renova post 4" />
+      </div>
+      <div class="project-card">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Renova/5-1.jpg" alt="Renova post 5" />
+      </div>
+      <div class="project-card">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Renova/6-1.jpg" alt="Renova post 6" />
+      </div>
+      <!-- Karuzela 2: 5 slajdów, strzałki -->
+      <div class="project-card mobile-carousel" style="max-width:420px;margin:24px auto 0 auto;position:relative;">
+        <button class="carousel-arrow left" tabindex="0" aria-label="Poprzednie zdjęcie" style="position:absolute;top:50%;left:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10094;</button>
+        <div class="carousel-track" style="aspect-ratio:1/1;position:relative;width:100%;overflow:hidden;border-radius:8px;">
+          <img class="carousel-slide is-active project-thumb" src="assets/images/project/SM/Renova/7-1.jpg" alt="Renova post 7-1" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+          <img class="carousel-slide project-thumb" src="assets/images/project/SM/Renova/7-2.jpg" alt="Renova post 7-2" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+          <img class="carousel-slide project-thumb" src="assets/images/project/SM/Renova/7-3.jpg" alt="Renova post 7-3" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+          <img class="carousel-slide project-thumb" src="assets/images/project/SM/Renova/7-4.jpg" alt="Renova post 7-4" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+          <img class="carousel-slide project-thumb" src="assets/images/project/SM/Renova/7-5.jpg" alt="Renova post 7-5" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+        </div>
+        <button class="carousel-arrow right" tabindex="0" aria-label="Następne zdjęcie" style="position:absolute;top:50%;right:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10095;</button>
+      </div>
+      <!-- Wideo -->
+      <div class="project-card is-video" style="cursor:pointer;">
+        <video class="project-media fit-contain pos-center" poster="assets/images/project/SM/Renova/1-1.jpg" src="assets/video/kafel-renova1.mp4" muted playsinline preload="metadata"></video>
+      </div>
+      <div class="project-card">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Renova/9-1.jpg" alt="Renova post 9" />
+      </div>
+    </div>
+    <div class="project-intro">
+      <h3>Facebook Cover Photo Idea</h3>
+      <p>Cover photo idea for Renova on Facebook (practice project).</p>
+    </div>
+    <div class="project-hero-2">
+      <img src="assets/images/project/SM/Renova/fb-cover.png" alt="Facebook cover idea" loading="lazy" decoding="async" />
+    </div>
+    <div class="project-hero">
+      <img src="assets/images/project/SM/Renova/fb-cover-laptop.jpg" alt="Laptop mockup" loading="lazy" decoding="async" />
+    </div>
+    <div class="project-mosaic">
+      <div class="mosaic-left mosaic-card">
+        <img src="assets/images/project/SM/Renova/cards.jpg" alt="Business cards – wide" />
+      </div>
+      <div class="mosaic-right-top mosaic-card">
+        <img src="assets/images/project/SM/Renova/cards-1.jpg" alt="Business cards detail 1" />
+      </div>
+      <div class="mosaic-right-bottom mosaic-card">
+        <img src="assets/images/project/SM/Renova/cards-2.jpg" alt="Business cards detail 2" />
+      </div>
+    </div>
+    <div class="project-footer-bar">
+      <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+    </div>
+  </section>
+  <!-- Modal do powiększania video -->
+  <div id="videoModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+    <div style="position:relative; max-width:90vw; max-height:90vh;">
+      <button id="videoModalClose" style="position:absolute; top:-32px; right:0; background:none; border:none; color:#fff; font-size:32px; cursor:pointer;">&times;</button>
+      <video id="videoPlayer" controls style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.5);"></video>
+    </div>
+  </div>
+  <script src="assets/js/video-popup.js"></script>
+  <div data-footer></div>
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script>
+    // Karuzele mobilne (strzałki, swipe)
+    document.addEventListener('DOMContentLoaded', function() {
+      var carousels = document.querySelectorAll('.mobile-carousel');
+      carousels.forEach(function(carousel) {
+        var slides = carousel.querySelectorAll('.carousel-slide');
+        var left = carousel.querySelector('.carousel-arrow.left');
+        var right = carousel.querySelector('.carousel-arrow.right');
+        var current = 0;
+        slides.forEach((s, i) => s.classList.toggle('is-active', i === 0));
+        function show(idx) {
+          slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+          current = idx;
+        }
+        if (left) left.onclick = function(e) {
+          e.preventDefault();
+          var next = (current - 1 + slides.length) % slides.length;
+          show(next);
+        };
+        if (right) right.onclick = function(e) {
+          e.preventDefault();
+          var next = (current + 1) % slides.length;
+          show(next);
+        };
+        var track = carousel.querySelector('.carousel-track');
+        var startX = null;
+        if (track) {
+          track.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) startX = e.touches[0].clientX;
+          });
+          track.addEventListener('touchend', function(e) {
+            if (startX === null) return;
+            var dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 30) {
+              var next = (current + (dx < 0 ? 1 : -1) + slides.length) % slides.length;
+              show(next);
+            }
+            startX = null;
+          });
+        }
+      });
+      // Otwieranie wideo w modalu (jak w GoVege mobile)
+      document.querySelectorAll('.project-card.is-video').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function(e) {
+          const video = card.querySelector('video');
+          if (video && video.src) {
+            e.preventDefault();
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('videoPlayer');
+            player.src = video.src;
+            modal.style.display = 'flex';
+            player.play();
+          }
+        });
+      });
+      document.getElementById('videoModalClose').onclick = function() {
+        const modal = document.getElementById('videoModal');
+        const player = document.getElementById('videoPlayer');
+        player.pause();
+        player.src = '';
+        modal.style.display = 'none';
+      };
+      document.getElementById('videoModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          const player = document.getElementById('videoPlayer');
+          player.pause();
+          player.src = '';
+          this.style.display = 'none';
+        }
+      });
+    });
+    // Hamburger menu
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+    // Smooth scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.js-to-top').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

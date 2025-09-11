@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>NaNudy | Mobile</title>
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/projects.css" />
+	<link rel="stylesheet" href="assets/css/footer.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+	<style>
+		.phone-mockup-controls {
+			display: flex;
+		}
+		.pm-btn {
+			font-size: 1.3rem;
+			padding: 2px 8px;
+			margin: 0 2px;
+			background: #fff;
+			border: 1px solid #ddd;
+			border-radius: 50%;
+			cursor: pointer;
+			z-index: 3;
+		}
+		.dots-phone {
+			display: flex;
+			justify-content: center;
+			gap: 6px;
+			margin: 8px 0 0 0;
+		}
+		.dots-phone span, .dots-phone button {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: #bbb;
+			display: inline-block;
+			border: none;
+			margin: 0 2px;
+			padding: 0;
+		}
+		.pm-viewport {
+			width: 100%;
+			max-width: 320px;
+			height: 660px;
+			min-height: 660px;
+			overflow: hidden;
+			position: relative;
+			background: #fff;
+			border-radius: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.pm-track {
+			display: flex;
+			transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+			will-change: transform;
+			height: 100%;
+		}
+		.pm-slide {
+			min-width: 100%;
+			max-width: 100%;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			background: #fff;
+			border-radius: 16px;
+			margin: 0 auto;
+			box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+		}
+		@media (min-width: 771px) { body { max-width: 480px; margin: 0 auto; } }
+		body {
+			margin: 0;
+			padding-top: 64px !important;
+			font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+			color: var(--ink);
+			background-color: #fff;
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='M20 0H0V20' fill='none' stroke='%23e3e3e3' stroke-width='0.5'/></svg>");
+			background-repeat: repeat;
+			background-size: 10px 10px;
+		}
+	</style>
+	<style>
+		.pm-track {
+			display: flex !important;
+			width: calc(100% * 15) !important;
+			transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+		}
+						.pm-slide {
+							flex: 0 0 100% !important;
+							width: 100% !important;
+							height: 100% !important;
+							min-width: 100% !important;
+							max-width: 100% !important;
+							min-height: 100% !important;
+							max-height: 100% !important;
+							object-fit: contain !important;
+							object-position: 0 15% !important;
+							margin: 0 !important;
+							border-radius: 24px !important;
+							box-shadow: none !important;
+							display: block;
+						}
+	</style>
+</head>
+<body>
+		<div id="top"></div>
+		<nav class="navbar" style="position:fixed;top:0;left:0;width:100vw;min-width:100vw;max-width:100vw;z-index:1000;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.05);height:64px;">
+			<div class="nav-container">
+				<div class="logo-area">
+					<a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+						<img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+						<span class="logo-text">Portfolio</span>
+					</a>
+				</div>
+				<div class="nav-links">
+					<a href="projects.html">Projects</a>
+					<a href="about-me.html">About me</a>
+					<a href="contact.html">Contact</a>
+				</div>
+				<button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+					<span></span><span></span><span></span>
+				</button>
+				<div id="mobile-menu" class="mobile-nav-links">
+					<a href="projects.html">Projects</a>
+					<a href="about-me.html">About me</a>
+					<a href="contact.html">Contact</a>
+				</div>
+			</div>
+		</nav>
+
+		<section class="projects-section">
+			<div class="projects-header">
+				<p class="breadcrumbs">
+					<a class="crumb-back" href="projects.html#all">Projects</a>
+					<span class="crumb-sep">›</span>
+					<span class="crumb-current">NaNudy</span>
+				</p>
+				<h2>NaNudy</h2>
+			</div>
+			<div class="project-intro">
+				<h3>The app with play ideas "NaNudy"</h3>
+				<p>A mobile app designed to collect and categorize activity ideas for preschool-aged children.</p>
+			</div>
+			<div class="project-hero" style="margin-bottom:32px;">
+				<img src="assets/images/project/UX-UI/Nanudy/nanudy-cover.jpg" alt="NaNudy app cover" loading="eager" />
+			</div>
+		
+						 <div class="grid-phone">
+				<div class="phone-item"><p class="phone-caption">Landing Page</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-1.png" alt="Landing Page"></div></div>
+				<div class="phone-item"><p class="phone-caption">Pop-up – Join us/Log in</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-2.png" alt="Pop-up Join us/Log in"></div></div>
+				<div class="phone-item"><p class="phone-caption">Form – Join us</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-3.png" alt="Form Join us"></div></div>
+				<div class="phone-item"><p class="phone-caption">Form – Join us</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-4.png" alt="Form Join us 2"></div></div>
+				<div class="phone-item"><p class="phone-caption">Form – Log in</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-5.png" alt="Form Log in"></div></div>
+				<div class="phone-item"><p class="phone-caption">Welcome screen</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-6.png" alt="Welcome screen"></div></div>
+				<div class="phone-item"><p class="phone-caption">Child profile creator</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-7.png" alt="Child profile creator"></div></div>
+				<div class="phone-item"><p class="phone-caption">Main page</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-8.png" alt="Main page"></div></div>
+				<div class="phone-item"><p class="phone-caption">Main page</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-9.png" alt="Main page 2"></div></div>
+				<div class="phone-item"><p class="phone-caption">Activity categories</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-10.png" alt="Activity categories"></div></div>
+				<div class="phone-item"><p class="phone-caption">Favourite activities</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-11.png" alt="Favourite activities"></div></div>
+				<div class="phone-item"><p class="phone-caption">Favourite activities – Filters</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-12.png" alt="Favourite activities Filters"></div></div>
+				<div class="phone-item"><p class="phone-caption">Categories</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-13.png" alt="Categories"></div></div>
+				<div class="phone-item"><p class="phone-caption">A chosen play idea</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-14.png" alt="A chosen play idea"></div></div>
+				<div class="phone-item"><p class="phone-caption">User profile</p><div class="phone"><img src="assets/images/project/UX-UI/Nanudy/screen-15.png" alt="User profile"></div></div>
+			</div>
+
+			<!-- Przywrócone: dodatkowe sekcje z desktopu -->
+			<div class="project-intro">
+				<h3>Avatars for a child's profile</h3>
+				<p>Grid-based icons of the 'NaNudy' app, following the design style.</p>
+			</div>
+			<figure class="project-plain">
+				<img src="assets/images/project/Symbol/Nanudy/avatars.png" alt="Avatars for a child's profile" style="display:block;max-width:100%;height:auto;">
+			</figure>
+			<div class="project-intro">
+				<h3>Activities category icons</h3>
+				<p>Grid-based icons of the 'NaNudy' app, following the design style.</p>
+			</div>
+			<figure class="project-plain">
+				<img src="assets/images/project/Symbol/Nanudy/categories.png" alt="Activities category icons" style="display:block;max-width:100%;height:auto;">
+			</figure>
+			<div class="project-intro">
+				<h3>Navigation icons</h3>
+				<p>Grid-based icons of the 'NaNudy' app, following the design style.</p>
+			</div>
+			<figure class="project-plain">
+				   <img src="assets/images/project/Symbol/Nanudy/bar-icons.png" alt="Navigation icons" style="display:block;max-width:100%;height:auto;">
+			   </figure>
+
+
+			<!-- Phone Mockup Carousel (dokładnie jak w biedronka-mobile, z obrazami NaNudy) -->
+			<div class="phone-mockup">
+				<button class="pm-btn pm-prev" aria-label="Poprzedni">‹</button>
+				<div class="phone-frame">
+					<img class="frame-overlay" src="assets/images/project/UX-UI/Nanudy/phone-frame.png" alt="" aria-hidden="true" />
+					<div class="frame-screen">
+						<div class="pm-viewport">
+							<div class="pm-track">
+								<img class="pm-slide is-active" src="assets/images/project/UX-UI/Nanudy/screen-1.png" alt="Screen 1">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-2.png" alt="Screen 2">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-3.png" alt="Screen 3">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-4.png" alt="Screen 4">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-5.png" alt="Screen 5">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-6.png" alt="Screen 6">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-7.png" alt="Screen 7">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-8.png" alt="Screen 8">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-9.png" alt="Screen 9">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-10.png" alt="Screen 10">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-11.png" alt="Screen 11">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-12.png" alt="Screen 12">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-13.png" alt="Screen 13">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-14.png" alt="Screen 14">
+								<img class="pm-slide" src="assets/images/project/UX-UI/Nanudy/screen-15.png" alt="Screen 15">
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="pm-btn pm-next" aria-label="Następny">›</button>
+			</div>
+			   <!-- Usunięto duplikat phone-mockup -->
+							 <div class="dots-phone"></div>
+
+							 <!-- Dolny pasek przycisków -->
+							 <div class="project-footer-bar" style="display:flex; justify-content:center; align-items:center; max-width:480px; margin:72px auto 32px;">
+								 <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+							 </div>
+		</section>
+
+		<div data-footer></div>
+							 <script src="assets/js/footer-inline.js" defer></script>
+							 <script src="assets/js/video-popup.js" defer></script>
+							 <script>
+								 document.addEventListener('DOMContentLoaded', () => {
+									 // Scroll to top
+									 document.querySelectorAll('.js-to-top').forEach(btn => {
+										 btn.addEventListener('click', (e) => {
+											 e.preventDefault();
+											 window.scrollTo({ top: 0, behavior: 'smooth' });
+										 });
+									 });
+									 // Hamburger menu
+									 const hamburger = document.querySelector('.nav-hamburger');
+									 const mobileMenu = document.getElementById('mobile-menu');
+									 if (hamburger && mobileMenu) {
+										 hamburger.addEventListener('click', function() {
+											 const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+											 hamburger.setAttribute('aria-expanded', !expanded);
+											 mobileMenu.classList.toggle('is-open');
+											 hamburger.classList.toggle('is-open');
+										 });
+										 // Zamknij menu po kliknięciu w link
+										 mobileMenu.querySelectorAll('a').forEach(link => {
+											 link.addEventListener('click', () => {
+												 mobileMenu.classList.remove('is-open');
+												 hamburger.classList.remove('is-open');
+												 hamburger.setAttribute('aria-expanded', 'false');
+											 });
+										 });
+									 }
+													 // Prosta karuzela: zawsze jeden slajd, strzałki działają, bez scrollowania palcem
+		document.querySelectorAll('.phone-mockup').forEach((root) => {
+			const slides = root.querySelectorAll('.pm-slide');
+			const prev   = root.querySelector('.pm-prev');
+			const next   = root.querySelector('.pm-next');
+			let index = 0;
+
+			function go(i){
+				index = (i + slides.length) % slides.length;
+				slides.forEach((slide, idx) => {
+					slide.classList.toggle('is-active', idx === index);
+				});
+			}
+
+			prev?.addEventListener('click', () => go(index - 1));
+			next?.addEventListener('click', () => go(index + 1));
+
+			// Swipe support (opcjonalnie)
+			let startX = null, pid = null;
+			const viewport = root.querySelector('.pm-viewport');
+			if(viewport) {
+				viewport.addEventListener('pointerdown', e => {
+					startX = e.clientX; pid = e.pointerId;
+					viewport.setPointerCapture(pid);
+				});
+				viewport.addEventListener('pointerup', e => {
+					if (startX == null) return;
+					const dx = e.clientX - startX;
+					if (Math.abs(dx) > 30) (dx < 0 ? go(index + 1) : go(index - 1));
+					startX = null; pid = null;
+				});
+			}
+			go(0);
+		});
+								 });
+							 </script>
+</body>
+</html>

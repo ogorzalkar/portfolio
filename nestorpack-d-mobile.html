@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nestorpack | Mobile | Karolina Ogorzalek</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Mobile-specific overrides */
+    body {
+      background-color: #fff;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='M20 0H0V20' fill='none' stroke='%23e3e3e3' stroke-width='0.5'/></svg>");
+      background-repeat: repeat;
+      background-size: 10px 10px;
+      margin: 0;
+      font-size: 16px;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 1000;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+.projects-section {
+      margin-top: 64px;
+      padding: 80px 0.5rem 0 0.5rem;
+     ;
+    }
+    .project-hero img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 600px) {
+      .laptop-frame { max-width: 98vw; }
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+
+  <!-- Fixed NavBar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+          <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+          <span class="logo-text">Portfolio</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="mobile-menu" class="mobile-nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="projects-section">
+    <div class="projects-header">
+      <p class="breadcrumbs">
+        <a class="crumb-back" href="projects.html#all">Projects</a>
+        <span class="crumb-sep">›</span>
+        <span class="crumb-current">Nestorpack</span>
+      </p>
+      <h2>Nestorpack</h2>
+    </div>
+
+    <div class="project-versions-bar">
+      <a class="chip version-chip" href="nestorpack-mobile.html">Mobile</a>
+      <span class="chip version-chip is-active">Desktop</span>
+    </div>
+
+    <div class="project-intro">
+      <h3>Desktop version of the Nestorpack</h3>
+      <p>The desktop version of the Nestorpack printing company website aims to improve the process of ordering packaging. The main goals are to add 2D and 3D visualization features, so customers can preview the products they order before finalizing their purchase.</p>
+    </div>
+
+    <div class="project-hero">
+      <img src="assets/images/project/UX-UI/Nestor/cover-d.png" alt="Nestorpack app cover" loading="eager" />
+    </div>
+
+    <!-- Wszystkie screeny z karuzeli jeden pod drugim -->
+    <div class="project-screens-mobile" style="display: flex; flex-direction: column; gap: 0;">
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Loading Screen</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/0-d.png" alt="Desktop screen 0" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Home Page</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/1-d.png" alt="Desktop screen 1" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Packaging Categories Page</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/2-d.png" alt="Desktop screen 2" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Parameter Selection Page</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/3-d.png" alt="Desktop screen 3" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Parameter Selection – 3D Visualization</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/4-d.png" alt="Desktop screen 4" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Product Order Summary</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/5-d.png" alt="Desktop screen 5" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Order Inquiry Submission Page</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/6-d.png" alt="Desktop screen 6" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Contact</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/7-d.png" alt="Desktop screen 7" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">About Us</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/8-d.png" alt="Desktop screen 8" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+      <figure style="margin:0;">
+        <figcaption style="font-family:'Roboto',sans-serif;font-size:12px;color:#777;text-align:center;margin-top:32px;margin-bottom:12px;">Frequently Asked Questions</figcaption>
+        <img src="assets/images/project/UX-UI/Nestor/9-d.png" alt="Desktop screen 9" style="width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);" />
+      </figure>
+    </div>
+
+    <div style="height: 32px;"></div>
+
+    <div class="project-footer-bar">
+      <a class="chip js-to-top" href="#top">Scroll to top</a>
+    </div>
+
+    <div data-footer></div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.js-to-top').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  });
+  </script>
+  <script>
+    // Hamburger menu
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
+        });
+        // Zamknij menu po kliknięciu w link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+  <script src="assets/js/footer-inline.js" defer></script>
+</body>
+</html>

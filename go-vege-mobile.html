@@ -1,0 +1,352 @@
+<!-- GoVege – wersja mobilna -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GoVege | Mobile</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .changes-bg {
+            margin-bottom: 0 !important;
+        }
+        .changes-bg + .project-hero {
+            margin-top: 0 !important;
+        }
+        .projects-header {
+            margin-bottom: 24px !important;
+        }
+    .project-grid { margin-bottom: 0 !important; }
+    .project-grid .project-card:last-child { margin-bottom: 0 !important; }
+        .project-grid .project-card {
+            margin: 0 0 24px 0 !important;
+        }
+        .carousel-arrow {
+            z-index: 10 !important;
+        }
+        .carousel-track {
+            position: relative;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+        .carousel-slide.is-active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 2;
+        }
+        body {
+            background-color: #fff;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='M20 0H0V20' fill='none' stroke='%23e3e3e3' stroke-width='0.5'/></svg>");
+            background-repeat: repeat;
+            background-size: 10px 10px;
+            margin: 0;
+            font-size: 16px;
+        }
+        .navbar { position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; }
+        body { padding-top: 64px !important; }
+        .project-footer-bar { display: flex !important; justify-content: center !important; grid-template-columns: none !important; }
+        .project-footer-bar .back { display: none !important; }
+        .project-grid, .project-mosaic, .project-hero, .changes-bg { max-width: 100vw !important; }
+        .project-card, .project-hero img, .project-mosaic img { width: 100% !important; max-width: 100vw !important;  }
+        .changes-wrap, .project-intro { margin-left: 8px !important; margin-right: 8px !important; }
+        @media (min-width: 771px) { body { max-width: 480px; margin: 0 auto; } }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <!-- Nawigacja mobilna -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+                    <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+                    <span class="logo-text">Portfolio</span>
+                </a>
+            </div>
+            <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div id="mobile-menu" class="mobile-nav-links">
+                <a href="projects.html">Projects</a>
+                <a href="about-me.html">About me</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Treść projektu (kopiowana z desktop, uproszczona pod mobile) -->
+    <section class="projects-section">
+        <div class="projects-header">
+            <p class="breadcrumbs">
+                <a class="crumb-back" href="projects.html#all">Projects</a>
+                <span class="crumb-sep">›</span>
+                <span class="crumb-current">GoVege</span>
+            </p>
+            <h2>GoVege</h2>
+        </div>
+        <div class="changes-bg">
+            <div class="changes-wrap">
+                <div class="project-intro">
+                    <h3>Facebook Social Media Post Ideas</h3>
+                    <p>Post ideas for GoVege that promote a healthy lifestyle and plant-based diet (practice project).</p>
+                </div>
+                <div class="project-hero">
+                    <img src="assets/images/project/SM/Govege/kafel-govege.jpg" alt="GoVege - cover" loading="eager" decoding="async" />
+                </div>
+            </div>
+        </div>
+        <div class="project-grid">
+            <!-- 1. Karuzela 1 -->
+            <div class="project-card mobile-carousel" style="max-width:420px;margin:0 auto;position:relative;">
+                <button class="carousel-arrow left" tabindex="0" aria-label="Poprzednie zdjęcie" style="position:absolute;top:50%;left:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10094;</button>
+                <div class="carousel-track" style="aspect-ratio:1/1;position:relative;width:100%;overflow:hidden;border-radius:16px;">
+                    <img class="carousel-slide is-active project-thumb" src="assets/images/project/SM/Govege/1.jpg" alt="GoVege 1" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                    <img class="carousel-slide project-thumb" src="assets/images/project/SM/Govege/1-1.jpg" alt="GoVege 1-1" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                </div>
+                <button class="carousel-arrow right" tabindex="0" aria-label="Następne zdjęcie" style="position:absolute;top:50%;right:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10095;</button>
+            </div>
+            <!-- 2. Video 1 -->
+            <div class="project-card is-video">
+                <video class="project-media fit-contain pos-center" poster="assets/images/project/SM/Govege/1.jpg" src="assets/video/kafel-govege1.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            </div>
+            <!-- 3. Karuzela 2 -->
+            <div class="project-card mobile-carousel" style="max-width:420px;margin:24px auto 0 auto;position:relative;">
+                <button class="carousel-arrow left" tabindex="0" aria-label="Poprzednie zdjęcie" style="position:absolute;top:50%;left:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10094;</button>
+                <div class="carousel-track" style="aspect-ratio:1/1;position:relative;width:100%;overflow:hidden;border-radius:16px;">
+                    <img class="carousel-slide is-active project-thumb" src="assets/images/project/SM/Govege/2.jpg" alt="GoVege 2" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                    <img class="carousel-slide project-thumb" src="assets/images/project/SM/Govege/2-1.jpg" alt="GoVege 2-1" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                    <img class="carousel-slide project-thumb" src="assets/images/project/SM/Govege/2-2.jpg" alt="GoVege 2-2" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                    <img class="carousel-slide project-thumb" src="assets/images/project/SM/Govege/2-3.jpg" alt="GoVege 2-3" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                    <img class="carousel-slide project-thumb" src="assets/images/project/SM/Govege/2-4.jpg" alt="GoVege 2-4" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                </div>
+                <button class="carousel-arrow right" tabindex="0" aria-label="Następne zdjęcie" style="position:absolute;top:50%;right:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10095;</button>
+            </div>
+            <!-- 4. Zdjęcie 3 -->
+            <div class="project-card">
+                <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Govege/3.jpg" alt="GoVege 3" />
+            </div>
+            <!-- 5. Zdjęcie 5 -->
+            <div class="project-card">
+                <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Govege/5.jpg" alt="GoVege 5" />
+            </div>
+            <!-- 6. Zdjęcie 6 -->
+            <div class="project-card">
+                <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Govege/6.jpg" alt="GoVege 6" />
+            </div>
+            <!-- 7. Karuzela 10 -->
+            <div class="project-card mobile-carousel" style="max-width:420px;margin:24px auto 0 auto;position:relative;">
+                <button class="carousel-arrow left" tabindex="0" aria-label="Poprzednie zdjęcie" style="position:absolute;top:50%;left:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10094;</button>
+                <div class="carousel-track" style="aspect-ratio:1/1;position:relative;width:100%;overflow:hidden;border-radius:16px;">
+                    <img class="carousel-slide is-active project-thumb" src="assets/images/project/SM/Govege/10.jpg" alt="GoVege 10" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                    <img class="carousel-slide project-thumb" src="assets/images/project/SM/Govege/10-1.jpg" alt="GoVege 10-1" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;" />
+                </div>
+                <button class="carousel-arrow right" tabindex="0" aria-label="Następne zdjęcie" style="position:absolute;top:50%;right:4px;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;border-radius:50%;width:28px;height:28px;font-size:1.1rem;z-index:2;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">&#10095;</button>
+            </div>
+            <!-- 8. Video 2 (govege3) -->
+            <div class="project-card is-video">
+                <video class="project-media fit-contain pos-center" poster="assets/images/project/SM/Govege/1.jpg" src="assets/video/kafel-govege3.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            </div>
+            <!-- 9. Zdjęcie 9 -->
+            <div class="project-card">
+                <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/Govege/9.jpg" alt="GoVege 9" />
+            </div>
+        </div>
+
+            <script>
+            <!-- skrypt przeniesiony na koniec pliku -->
+        </script>
+        
+        <div class="changes-bg">
+            <div class="changes-wrap">
+                <div class="project-intro">
+                    <h3>Facebook Cover Photo Idea</h3>
+                    <p>Cover photo idea for GoVege on Facebook (practice project).</p>
+                </div>
+            </div>
+        </div>
+        <div class="project-mosaic" style="display:block;">
+            <div class="mosaic-left mosaic-card" style="width:100%; max-height:400px; overflow:hidden;">
+                <img src="assets/images/project/SM/Govege/cover-photo.jpg" alt="Govege - cover" style="width:100%; display:block; max-height:500px; object-fit:contain;" />
+            </div>
+        </div>
+        <div class="project-hero">
+            <img src="assets/images/project/SM/Govege/govege-laptop.jpg" alt="GoVege - laptop mockup" loading="lazy" decoding="async" />
+        </div>
+        <div class="project-hero">
+            <img src="assets/images/project/SM/Govege/govege-insta.png" alt="GoVege - Instagram preview" loading="lazy" decoding="async" />
+        </div>
+        <div class="changes-bg">
+            <div class="changes-wrap">
+                <div class="project-intro">
+                    <h3>GoVege Business Cards</h3>
+                    <p>Business card design for GoVege.</p>
+                </div>
+            </div>
+        </div>
+        <div class="project-hero">
+            <img src="assets/images/project/SM/Govege/business-card.png" alt="GoVege business card">
+        </div>
+        <div class="changes-bg">
+            <div class="changes-wrap">
+                <div class="project-intro">
+                    <h3>Tote Bag Project – Front</h3>
+                    <p>Project of tote bag for a Vegan Day – Go Vege </p>
+                </div>
+            </div>
+        </div>
+        <div class="project-hero">
+            <img src="assets/images/project/SM/Govege/bag-front.jpg" alt="GoVege tote bag front">
+        </div>
+        <div class="changes-bg">
+            <div class="changes-wrap">
+                <div class="project-intro">
+                    <h3>Tote Bag Project – Back</h3>
+                    <p>Project of tote bag for a Vegan Day – Go Vege </p>
+                </div>
+            </div>
+        </div>
+        <div class="project-hero">
+            <img src="assets/images/project/SM/Govege/bag-back.jpg" alt="GoVege tote bag back">
+        </div>
+        <!-- Pasek na dole, tylko scroll to top -->
+        <div class="project-footer-bar">
+            <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+        </div>
+        <!-- Modal do powiększania video -->
+        <div id="videoModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+            <div style="position:relative; max-width:90vw; max-height:90vh;">
+                <button id="videoModalClose" style="position:absolute; top:-32px; right:0; background:none; border:none; color:#fff; font-size:32px; cursor:pointer;">&times;</button>
+                <video id="videoPlayer" controls style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.5);"></video>
+            </div>
+        </div>
+        <!-- Skrypt karuzeli przeniesiony na koniec pliku -->
+    </section>
+    <!-- Footer -->
+    <div data-footer></div>
+    <script src="assets/js/footer-inline.js" defer></script>
+
+    <script>
+    // Bardzo prosty, niezawodny skrypt karuzeli mobilnej (2 slajdy, strzałki, swipe) + debug
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOMContentLoaded fired');
+        var carousels = document.querySelectorAll('.mobile-carousel');
+        console.log('Znaleziono karuzele:', carousels.length);
+        carousels.forEach(function(carousel, idx) {
+            console.log('Karuzela #' + idx, carousel);
+            var slides = carousel.querySelectorAll('.carousel-slide');
+            var left = carousel.querySelector('.carousel-arrow.left');
+            var right = carousel.querySelector('.carousel-arrow.right');
+            var current = 0;
+            // Ustaw pierwszy aktywny
+            slides.forEach((s, i) => s.classList.toggle('is-active', i === 0));
+            function show(idx) {
+                slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+                current = idx;
+                console.log('Pokaz slajd', idx);
+            }
+            if (left) left.onclick = function(e) {
+                e.preventDefault();
+                var next = (current - 1 + slides.length) % slides.length;
+                show(next);
+                console.log('Klik lewa');
+            };
+            if (right) right.onclick = function(e) {
+                e.preventDefault();
+                var next = (current + 1) % slides.length;
+                show(next);
+                console.log('Klik prawa');
+            };
+            // Swipe
+            var track = carousel.querySelector('.carousel-track');
+            var startX = null;
+            if (track) {
+                track.addEventListener('touchstart', function(e) {
+                    if (e.touches.length === 1) startX = e.touches[0].clientX;
+                    console.log('touchstart', startX);
+                });
+                track.addEventListener('touchend', function(e) {
+                    if (startX === null) return;
+                    var dx = e.changedTouches[0].clientX - startX;
+                    if (Math.abs(dx) > 30) {
+                        var next = (current + (dx < 0 ? 1 : -1) + slides.length) % slides.length;
+                        show(next);
+                        console.log('Swipe', dx);
+                    }
+                    startX = null;
+                });
+            }
+        });
+        // Modal video na mobile
+        document.querySelectorAll('.project-card.is-video').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                const video = card.querySelector('video');
+                if (video && video.src) {
+                    e.preventDefault();
+                    const modal = document.getElementById('videoModal');
+                    const player = document.getElementById('videoPlayer');
+                    player.src = video.src;
+                    modal.style.display = 'flex';
+                    player.play();
+                }
+            });
+        });
+        document.getElementById('videoModalClose').onclick = function() {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('videoPlayer');
+            player.pause();
+            player.src = '';
+            modal.style.display = 'none';
+        };
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                const player = document.getElementById('videoPlayer');
+                player.pause();
+                player.src = '';
+                this.style.display = 'none';
+            }
+        });
+    });
+    </script>
+    <script>
+        // Smooth scroll dla „↑ Scroll to top”
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.js-to-top').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+        // Hamburger menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.nav-hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', function() {
+                    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+                    hamburger.setAttribute('aria-expanded', !expanded);
+                    mobileMenu.classList.toggle('is-open');
+                    hamburger.classList.toggle('is-open');
+                });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('is-open');
+                        hamburger.classList.remove('is-open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

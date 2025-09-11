@@ -1,0 +1,144 @@
+<!-- Kopia desktopowej wersji library.html do wersji mobilnej. Dostosuj układ i style do mobile. -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    html body > .navbar, body > .navbar, .navbar {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      z-index: 9999 !important;
+      background: #fff !important;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+      height: 64px !important;
+      will-change: transform;
+      transition: none !important;
+    }
+    body { padding-top: 64px !important; }
+    .project-hero img, .project-mosaic img, .mintful-logo-wide img, .changes-bg img {
+      width: 100% !important;
+      max-width: 100vw !important;
+      height: auto !important;
+      display: block;
+      margin: 0 auto 24px auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+    }
+    .projects-header, .project-intro, .changes-wrap {
+      margin-left: 8px !important;
+      margin-right: 8px !important;
+    }
+    .project-footer-bar { display: flex !important; justify-content: center !important; grid-template-columns: none !important; }
+    .project-footer-bar .back { display: none !important; }
+    @media (min-width: 771px) { body { max-width: 480px; margin: 0 auto; } }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library (Mobile)</title>
+</head>
+<body>
+  <div id="top"></div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+          <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+          <span class="logo-text">Portfolio</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="mobile-menu" class="mobile-nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="projects-section">
+    <div class="projects-header">
+      <p class="breadcrumbs">
+        <a class="crumb-back" href="projects.html#all">Projects</a>
+        <span class="crumb-sep">›</span>
+        <span class="crumb-current">Library Signs</span>
+      </p>
+      <h2>Library Signs</h2>
+      <span aria-hidden="true"></span>
+    </div>
+    <div class="project-intro">
+      <h3>Icon Design</h3>
+      <p>Creating a wayfinding system for a university library, based on information design.</p>
+    </div>
+    <div class="project-hero">
+      <img src="assets/images/project/Symbol/Biblioteka/kafel-library.png" alt="Library - cover" loading="eager" decoding="async" />
+    </div>
+    <div class="changes-bg">
+      <div class="changes-wrap">
+        <div class="project-intro">
+          <h3>Concepts of using the signs <label for=""></label></h3>
+          <p>Symbols potentially used in real life.</p>
+        </div>
+        <div class="project-mosaic">
+          <img src="assets/images/project/Symbol/Biblioteka/sign-1.png" alt="Library sign - 1" />
+          <img src="assets/images/project/Symbol/Biblioteka/sign-2.png" alt="Library sign - 2" />
+          <img src="assets/images/project/Symbol/Biblioteka/front-poster.png" alt="Library front poster" />
+          <img src="assets/images/project/Symbol/Biblioteka/sign-4.png" alt="Library sign - 4" />
+          <img src="assets/images/project/Symbol/Biblioteka/sign-3.png" alt="Library - psychology sign" />
+        </div>
+      </div>
+    </div>
+    <div class="project-footer-bar">
+      <a class="chip back" href="projects.html#all" style="justify-self:start;">Back to Projects</a>
+      <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+    </div>
+  </section>
+
+  <div data-footer></div>
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script src="assets/js/video-popup.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.js-to-top').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+      // Hamburger menu
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
+        });
+        // Zamknij menu po kliknięciu w link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

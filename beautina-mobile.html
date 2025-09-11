@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beautina | Projects | Karolina Ogorzalek</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body { 
+      background-color: #fff; 
+      padding-top: 64px; 
+      margin: 0;
+    }
+    .navbar { 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100vw; 
+      z-index: 100; 
+      background: #fff; 
+      height: 64px; 
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05); 
+    }
+    .project-footer-bar { display: flex !important; justify-content: center !important; grid-template-columns: none !important; }
+    .project-footer-bar .back { display: none !important; }
+    .project-grid, .project-mosaic, .project-hero, .changes-bg { max-width: 100vw !important; }
+    .project-card, .project-hero img, .project-mosaic img { width: 100% !important; max-width: 100vw !important; height: auto !important; }
+    .changes-wrap, .project-intro { margin-left: 8px !important; margin-right: 8px !important; }
+    @media (min-width: 771px) { body { max-width: 480px; margin: 0 auto; } }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+          <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+          <span class="logo-text">Portfolio</span>
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="mobile-menu" class="mobile-nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <section class="projects-section">
+    <div class="projects-header">
+      <p class="breadcrumbs">
+        <span class="crumb-current">Beautina</span>
+      </p>
+      <h2>Beautina</h2>
+      <span aria-hidden="true"></span>
+    </div>
+    <div class="project-intro">
+      <h3>Logo Design</h3>
+      <p>Design of the logo for the makeup studio Beautina, run by makeup artist Tina.</p>
+    </div>
+    <div class="project-hero">
+      <img src="assets/images/project/Brand/Beautina/kafel-beautina.png" alt="Beautina - cover" loading="eager" decoding="async" />
+    </div>
+    <div class="project-intro">
+      <h3>Logo design</h3>
+      <p>Beautina logo – presented in various versions.</p>
+    </div>
+    <img src="assets/images/project/Brand/Beautina/logos.png" alt="Beautina logos" style="width:100%;max-width:420px;display:block;margin:0 auto 24px;" />
+    <div class="project-intro">
+      <h3>Logo usage examples</h3>
+      <p>Beautina logo and sample applications on the salon wall, business card, cosmetic bag, voucher, and signage outside the salon.</p>
+    </div>
+    <img src="assets/images/project/Brand/Beautina/mockup-1.png" alt="Business cards – wide" style="width:100%;height:auto;object-fit:cover;border-radius:14px;box-shadow:0 2px 16px 0 rgba(0,0,0,0.08);margin-bottom:12px;" />
+    <img src="assets/images/project/Brand/Beautina/mockup-4.jpg" alt="Business cards detail 1" style="width:100%;height:auto;object-fit:cover;border-radius:14px;box-shadow:0 2px 16px 0 rgba(0,0,0,0.08);margin-bottom:12px;" />
+    <img src="assets/images/project/Brand/Beautina/mockup-3.jpg" alt="Business cards detail 2" style="width:100%;height:auto;object-fit:cover;border-radius:14px;box-shadow:0 2px 16px 0 rgba(0,0,0,0.08);margin-bottom:12px;" />
+    <img src="assets/images/project/Brand/Beautina/mockup-2.jpg" alt="Business cards detail 3" style="width:100%;height:auto;object-fit:cover;border-radius:14px;box-shadow:0 2px 16px 0 rgba(0,0,0,0.08);margin-bottom:12px;" />
+    <img src="assets/images/project/Brand/Beautina/mockup-5.png" alt="Business cards detail 4" style="width:100%;height:auto;object-fit:cover;border-radius:14px;box-shadow:0 2px 16px 0 rgba(0,0,0,0.08);margin-bottom:12px;" />
+    <div class="project-footer-bar" style="display:flex; justify-content:center; align-items:center; max-width:1200px; margin:72px auto 32px;">
+      <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+    </div>
+  </section>
+  <div data-footer></div>
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.js-to-top').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
