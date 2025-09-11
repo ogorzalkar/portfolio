@@ -2,14 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "nestorpack-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nestorpack| Projects | Karolina Ogorzalek</title>
+  <title>Nestorpack | Projects | Karolina Ogorzalek</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/projects.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
@@ -376,97 +371,43 @@
         </style>
       </div>
 
+      <!-- Footer (wstrzykiwany) -->
       <div data-footer></div>
-
-      <!-- Scripts -->
+      <script src="assets/js/footer-inline.js" defer></script>
+      <script src="assets/js/video-popup.js" defer></script>
       <script>
-      // Phone mockup carousel – FADE + DOTS-PHONE
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.phone-mockup').forEach((root) => {
-          const slides = root.querySelectorAll('.pm-slide');
-          const prev   = root.querySelector('.pm-prev');
-          const next   = root.querySelector('.pm-next');
-          const dotsWrap = root.nextElementSibling?.classList.contains('dots-phone') ? root.nextElementSibling : null;
-          let index = 0;
-
-          // Tworzenie kropek
-          if (dotsWrap) {
-            dotsWrap.innerHTML = '';
-            slides.forEach((_, i) => {
-              const btn = document.createElement('button');
-              btn.type = 'button';
-              btn.setAttribute('aria-label', `Slide ${i+1}`);
-              btn.addEventListener('click', () => go(i));
-              dotsWrap.appendChild(btn);
-            });
-          }
-
-          function go(i){
-            index = (i + slides.length) % slides.length;
-            slides.forEach((slide, idx) => {
-              slide.classList.toggle('is-active', idx === index);
-            });
-            if (dotsWrap) {
-              dotsWrap.querySelectorAll('button').forEach((b, j) => {
-                b.classList.toggle('is-active', j === index);
-              });
-            }
-          }
-
-          prev?.addEventListener('click', () => go(index - 1));
-          next?.addEventListener('click', () => go(index + 1));
-
-          // Swipe support
-          let startX = null, pid = null;
-          const viewport = root.querySelector('.pm-viewport');
-          viewport.addEventListener('pointerdown', e => {
-            startX = e.clientX; pid = e.pointerId;
-            viewport.setPointerCapture(pid);
-          });
-          viewport.addEventListener('pointerup', e => {
-            if (startX == null) return;
-            const dx = e.clientX - startX;
-            if (Math.abs(dx) > 30) (dx < 0 ? go(index + 1) : go(index - 1));
-            startX = null; pid = null;
-          });
-
-          go(0);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.js-to-top').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
-      </script>
-      <script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.js-to-top').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
-});
-</script>
-      <script>
-        // Hamburger menu
-        document.addEventListener('DOMContentLoaded', () => {
-          const hamburger = document.querySelector('.nav-hamburger');
-          const mobileMenu = document.getElementById('mobile-menu');
-          if (hamburger && mobileMenu) {
-            hamburger.addEventListener('click', function() {
-              const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-              hamburger.setAttribute('aria-expanded', !expanded);
-              mobileMenu.classList.toggle('is-open');
-              hamburger.classList.toggle('is-open');
-            });
-            // Zamknij menu po kliknięciu w link
-            mobileMenu.querySelectorAll('a').forEach(link => {
-              link.addEventListener('click', () => {
-                mobileMenu.classList.remove('is-open');
-                hamburger.classList.remove('is-open');
-                hamburger.setAttribute('aria-expanded', 'false');
-              });
-            });
-          }
+      // Hamburger menu
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
         });
-      </script>
-      <script src="assets/js/footer-inline.js" defer></script>
+        // Zamknij menu po kliknięciu w link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/nestorpack-mobile.html";
+    }
+  </script>
     </body>
     </html>
