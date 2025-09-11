@@ -1,0 +1,635 @@
+/* FAQ section header alignment for about-me */
+.faq-section .principles-header {
+  text-align: left;
+  margin-bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 40px;
+}
+.faq-section .principles-header h2 {
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  color: #95549c;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (min-width: 900px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.faq-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(149,84,156,0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+.faq-header h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  color: #111;
+  margin: 0;
+  font-weight: 500;
+}
+.principles-grid--languages {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px !important;
+  max-width: 240px;
+}
+.principles-grid--languages .lang-card {
+  max-width: 130px;
+  padding: 6px 8px;
+}
+/* --- Language cards custom layout --- */
+.principles-grid .lang-card {
+  padding: 8px 12px;
+  min-height: 36px;
+  max-width: 150px;
+}
+.exp-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  }
+/* Styl dla (Intership) w Experience */
+.exp-internship {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #888;
+  margin-left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 28px;
+  display: inline-block;
+}
+/* Ikona i nagłówek w jednej linii w Experience */
+.principle-card .exp-header {
+  display: flex;
+    align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.principle-card .exp-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  position: relative;
+  top: 2px;
+}
+/* Ikona w kaflu Experience */
+.exp-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 2px;
+}
+.principle-card h3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Szare tło dla sekcji Experience na całą szerokość */
+.experience-bg {
+  background: #f4f4f6;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0;
+  z-index: 0;
+}
+.experience-bg .principles-section {
+  background: none;
+  margin: 0 auto;
+  padding: 64px 0 64px 0;
+  max-width: var(--proj-max, 1200px);
+}
+/* Experience dark section */
+.experience-dark-section {
+  background: #23232a;
+  color: #fff;
+  padding: 64px 0 56px 0;
+  margin: 64px 0 0 0;
+  border-radius: 24px;
+}
+.experience-dark-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: left;
+}
+.experience-dark-content h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.experience-dark-content p {
+  color: #fff;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+.skills-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ===== Skills & Tools section ===== */
+
+.skills-section {
+  background: transparent;
+  padding: 32px 0 24px 0;
+  margin: 0 0 32px 0;
+}
+.skills-section h2 {
+  color: #222;
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 40px 0;
+  text-align: left;
+  padding-bottom: 40px;
+}
+.skills-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px 24px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.skills-chip {
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
+  padding: 12px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.97rem;
+  color: #555;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.skills-chip:hover {
+  box-shadow: 0 8px 24px 0 rgba(141,90,200,0.13);
+  transform: translateY(-2px) scale(1.04);
+  color: #95549c;
+}
+@media (max-width: 1100px) {
+  .skills-chips-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .skills-chips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 10px;
+  }
+  .skills-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+  }
+  .skills-chip {
+    font-size: 0.95rem;
+    padding: 8px 0;
+  }
+}
+/* Animacja i podświetlenie dla pierwszego kafla Principles */
+.principle-card {
+  /* ...istniejące style... */
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.principle-card:hover {
+  transform: scale(1.04);
+}
+.purple-highlight {
+  color: inherit;
+  font-weight: 400;
+  transition: color 0.3s cubic-bezier(.4,0,.2,1), font-weight 0.3s cubic-bezier(.4,0,.2,1);
+}
+.principle-card:hover .purple-highlight {
+  color: #95549c;
+  font-weight: 500;
+}
+/* ===== Footer styles (jak w projektach) ===== */
+.project-footer-bar{
+  max-width: var(--proj-max);
+  margin: 72px auto 32px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-2);
+}
+.project-footer-bar .back{ justify-self: start; }
+.project-footer-bar .js-to-top{ justify-self: center; }
+
+.chip,
+.breadcrumbs .crumb-back{
+  appearance: none;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 999px;
+  padding: 8px 24px;
+  font: 500 14px/1 'Roboto', sans-serif;
+  color: #222;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease, background .2s ease, color .2s ease;
+}
+.breadcrumbs .crumb-back::before{ content:"←"; margin-right:8px; line-height:1; }
+.chip.back::before{ content:"←"; margin-right:8px; }
+.chip.js-to-top::before{ content:"↑"; margin-right:8px; }
+
+.chip:hover,
+.breadcrumbs .crumb-back:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  border-color:#ddd;
+}
+.chip:active,
+.breadcrumbs .crumb-back:active{
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+.chip:focus-visible,
+.breadcrumbs .crumb-back:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.85) inset, 0 0 0 3px rgba(0,0,0,.15);
+}
+.principles-section h2 {
+  color: #111;
+  padding-bottom: 0px;
+  text-align: left;
+}
+/* ===================== INTRO TEXT ===================== */
+.project-intro{
+  max-width: var(--proj-max);
+  margin: 80px auto 32px;
+  padding: 0;
+  text-align: left;
+}
+.project-intro h3{
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #222;
+}
+.project-intro p{
+  margin: 0;
+  color: #222;
+  line-height: 1.7;
+}
+.section-divider{ display:none; }
+/* ===== Principles Section ===== */
+.principles-section {
+  max-width: var(--proj-max);
+  margin: 124px auto 124px auto;
+  padding: 0;
+  text-align: left;
+}
+.principles-header {
+  
+  text-align: center;
+  margin-bottom: 48px;
+}
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  /* usunięto margin/padding lewa/prawa */
+  /* brak paddingu i marginesów na desktopie */
+}
+.principle-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 70px;
+}
+.principle-card h3 {
+  font-size: 1.15rem;
+  font-family: 'Roboto', sans-serif;
+  color: #222;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+.principle-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .experience-bg .principles-header h2 {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    /* usunięto margin/padding lewa/prawa */
+  }
+  .principles-section {
+    padding: 0 16px 48px 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+/* Download CV button style (jak w index) */
+.download-cv-btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 10px 32px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s, background 0.3s;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  font-weight: 500;
+}
+.download-cv-btn:hover {
+  transform: scale(1.05);
+  background: #ffc022;
+  color: #222;
+  border-color: #ffc022;
+}
+
+/* Padding jak w .projects-section */
+.about-section {
+  padding-top: 80px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 32px;
+}
+
+.projects-section {
+    padding-bottom: 0;
+}
+/* ===================== HEADER (breadcrumbs po lewej, tytuł center) ===================== */
+.projects-header{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: var(--proj-max);
+  margin: 0 auto var(--space-3);
+  padding: 0 var(--space-2);
+  text-align: initial;
+  margin-bottom: 80px;
+}
+.projects-header .breadcrumbs{
+  grid-column: 1;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.projects-header h2{
+  grid-column: 2;
+  justify-self: center;
+  margin: 0;
+  color: #222;
+}
+
+/* Chip – wspólne użycie (breadcrumbs, przyciski) */
+.chip,
+.breadcrumbs .crumb-back{
+  appearance: none;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 999px;
+  padding: 8px 24px;
+  font: 500 14px/1 'Roboto', sans-serif;
+  color: #222;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease, background .2s ease, color .2s ease;
+}
+.breadcrumbs .crumb-back::before{ content:"←"; margin-right:8px; line-height:1; }
+.chip.back::before{ content:"←"; margin-right:8px; }
+.chip.js-to-top::before{ content:"↑"; margin-right:8px; }
+
+.chip:hover,
+.breadcrumbs .crumb-back:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  border-color:#ddd;
+}
+.chip:active,
+.breadcrumbs .crumb-back:active{
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+.chip:focus-visible,
+.breadcrumbs .crumb-back:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.85) inset, 0 0 0 3px rgba(0,0,0,.15);
+}
+
+.breadcrumbs .crumb-sep{ color:var(--muted); }
+.breadcrumbs .crumb-current{ color:var(--muted); }
+  
+/* about-me.css
+   Specjalne style dla podstrony About me
+   Dodawaj tu tylko to, co nie powinno być globalne!
+*/
+
+.about-me-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+.about-me-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text, #222);
+}
+
+.about-me-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--muted, #555);
+}
+
+/* ========================================
+   About section (ciemny blok)
+======================================== */
+.about-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 5%;
+  background: #1e1e1e;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.about-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 100 100'><filter id='grain'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23grain)' opacity='0.08'/></svg>");
+  background-repeat: repeat;
+  background-size: 40px 40px;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-header h2 {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 32px;
+  color: #fff;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+  margin: 24px auto 12px;
+  transition: width 0.4s ease;
+}
+
+.section-header h2:hover::after {
+  width: 150px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: var(--proj-max);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-photo {
+  position: relative;
+  text-align: center;
+  flex: 1 1 300px;
+  max-width: 600px;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.about-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-text h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Usuń całkowicie styl dla .about-photo-circle */
+.about-photo-circle { display: none !important; width: 0 !important; height: 0 !important; background: none !important; border: none !important; box-shadow: none !important; position: static !important; }
+
+/* Dodaj tu własne klasy i style dla About me! */
+h1, .about-header {
+  margin-bottom: 64px;
+}
+.about-section {
+  margin-top: 0;
+}
+
+.breadcrumbs {
+  margin-top: 80px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #777;
+}
+.principle-card .exp-header h3 {
+  margin: 0 !important;
+}
