@@ -1,241 +1,318 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Karolina Ogorzalek</title>
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/contact.css" /> <!-- DODAJ TO! -->
-  <link rel="stylesheet" href="assets/css/footer.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #fff;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='M20 0H0V20' fill='none' stroke='%23e3e3e3' stroke-width='0.5'/></svg>");
-      background-repeat: repeat;
-      background-size: 10px 10px;
-    }
-  </style>
-</head>
-<body>
-  <!-- Nav (nowoczesna, responsywna z hamburgerem) -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo-area">
-        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
-          <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
-          <span class="logo-text">Portfolio</span>
-        </a>
-      </div>
-      <div class="nav-links">
-        <a href="projects.html">Projects</a>
-        <a href="about-me.html">About me</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div id="mobile-menu" class="mobile-nav-links">
-        <a href="projects.html">Projects</a>
-        <a href="about-me.html">About me</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </nav>
-  <section class="contact-section">
-    <div class="section-header">
-      <h2>Contact</h2>
-      <p>Let's work together! Feel free to reach out via the form below or directly by email.</p>
-    </div>
-  <form class="contact-form" action="https://formspree.io/f/mgvlpbpo" method="POST" autocomplete="off" id="contactForm">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="eg. John Smith" />
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="eg. john@example.com" />
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="What do you need? Goals, timeline, links..."></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <!-- Popups -->
-      <div id="popup-success" class="popup-message" style="display:none;">
-        <div class="popup-content">
-          <span class="popup-close" onclick="closePopup('popup-success')">&times;</span>
-          <h3>Message sent!</h3>
-          <p>Thank you for reaching out. I will reply as soon as possible.</p>
-        </div>
-      </div>
-      <div id="popup-error" class="popup-message" style="display:none;">
-        <div class="popup-content">
-          <span class="popup-close" onclick="closePopup('popup-error')">&times;</span>
-          <h3>Sending failed</h3>
-          <p>Please try again, or contact me via <a href='https://www.linkedin.com/in/karolinazaras' target='_blank'>LinkedIn</a> or <a href='mailto:karogorza@gmail.com'>email</a>.</p>
-        </div>
-      </div>
-    <div class="contact-info">
-  <p><img src="assets/images/footer/gmail.svg" alt="Gmail" style="width:18px;height:18px;vertical-align:middle;margin-right:6px;" />
-    <a href="mailto:karogorza@gmail.com" id="contact-email" style="cursor:pointer;">karogorza@gmail.com</a>
-  <span id="email-tooltip" style="display:none; margin-left:8px; color:#95549c; font-size:13px;">Copied to clipboard!</span>
-  </p>
-  <p class="linkedin-row"><img src="assets/images/footer/linkedin.svg" alt="LinkedIn" style="width:18px;height:18px;vertical-align:middle;" /><a href="https://www.linkedin.com/in/karolinazaras" target="_blank">LinkedIn – My profile</a></p>
-    </div>
-  <style>
-    .popup-message {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .popup-content {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(149,84,156,0.13);
-      padding: 32px 32px 24px 32px;
-      max-width: 90vw;
-      min-width: 320px;
-      text-align: center;
-      position: relative;
-    }
-    .popup-content h3 { margin-top: 0; color: #95549c; }
-    .popup-content p { color: #222; }
-    .popup-close {
-      position: absolute;
-      top: 12px;
-      right: 18px;
-      font-size: 2rem;
-      color: #95549c;
-      cursor: pointer;
-      font-weight: bold;
-      line-height: 1;
-    }
-    .popup-content a { color: #95549c; text-decoration: underline; }
-    @media (max-width: 500px) {
-      .popup-content { min-width: 0; padding: 18px 6vw 12px 6vw; }
-    }
-  </style>
-  <script>
-    function closePopup(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-    // Obsługa wysyłki formularza z popupami
-    document.addEventListener('DOMContentLoaded', function() {
-      var form = document.getElementById('contactForm');
-      if(form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var data = new FormData(form);
-          fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          })
-          .then(function(response) {
-            if(response.ok) {
-              document.getElementById('popup-success').style.display = 'flex';
-              form.reset();
-            } else {
-              document.getElementById('popup-error').style.display = 'flex';
-            }
-          })
-          .catch(function() {
-            document.getElementById('popup-error').style.display = 'flex';
-          });
-        });
-      }
-    });
-    const email = document.getElementById('contact-email');
-    const tooltip = document.getElementById('email-tooltip');
-    if(email) {
-      email.addEventListener('click', function(e) {
-        e.preventDefault();
-        navigator.clipboard.writeText(email.textContent.trim());
-        if(tooltip) {
-          tooltip.style.display = 'inline';
-          setTimeout(() => { tooltip.style.display = 'none'; }, 1200);
-        }
-      });
-    }
-  </script>
-  </section>
+.faq-header-list {
+  width: 100%;
+  padding-left: 24px;
+  margin-bottom: 8px;
+}
+.faq-header-list h2 {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  color: #222;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.faq-header-grid {
+  grid-column: 1 / -1;
+  padding-left: 0px;
+  margin-bottom: 0;
+  align-self: start;
+}
+.faq-header-grid h2 {
+  .faq-section {
+    margin: 56px 0 0 0;
+    background: #181828;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 64px 0 64px 0;
+  }
+  .faq-header-grid {
+    width: 100%;
+    margin-bottom: 18px;
+    padding-left: 24px;
+    text-align: left;
+  }
+  .faq-header-grid h2 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 0 18px 0;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .faq-item.open, .faq-item:focus-within {
+    box-shadow: 0 8px 32px 0 rgba(149,84,156,0.13);
+  }
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #16181D;
+    text-align: left;
+    padding: 20px 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .faq-arrow {
+    margin-left: 16px;
+    font-size: 16px;
+    color: #95549c;
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+  .faq-item.open .faq-arrow {
+    transform: rotate(90deg);
+  }
+  .faq-answer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #555;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0 32px 0 32px;
+  line-height: 4.0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s, background 0.3s;
+}
+  .faq-item.open .faq-answer {
+    max-height: 200px;
+    padding: 16px 32px 20px 32px;
+    background: #f6f6fa;
 
-
-<!-- FAQ Section (outside the contact card) -->
-<section class="faq-section">
-  <style>
-    .faq-answer strong {
-      font-weight: 500;
-      color: #95549c;
-    }
-  </style>
-  <div class="faq-list">
-    <div class="faq-header-list"><h2>FAQs</h2></div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">What design software do you use?<span class="faq-arrow"></span></button>
-      <div class="faq-answer">Adobe <strong>Photoshop</strong>, <strong>Illustrator</strong>, <strong>XD</strong>, <strong>Figma</strong> for graphics and UI, <strong>Premiere Pro</strong> and <strong>After Effects</strong> for video and motion, <strong>Canva</strong> if needed. I’m always open to learning new programs.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">What does your design process look like?<span class="faq-arrow"></span></button>
-      <div class="faq-answer">Usually, it's based on <strong>Design Thinking</strong> – I start by <strong>understanding the client's goals</strong> and audience – then <strong>define</strong> the creative challenge. I explore ideas – <strong>build quick visual drafts</strong> – and <strong>refine them</strong> through feedback, whether it's for graphic design, branding or motion.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">Do you work with animation or motion graphics?<span class="faq-arrow"></span></button>
-      <div class="faq-answer">Yes – I create <strong>motion graphics</strong> and <strong>short animations</strong>, especially for social media. You can see examples in my portfolio.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">Do you work with US time zones?<span class="faq-arrow"></span></button>
-      <div class="faq-answer">I live in New Jersey and I work in <strong>Eastern Time</strong> (ET), so I’m aligned with standard US working hours.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">What type of contract do you prefer?<span class="faq-arrow"></span></button>
-      <div class="faq-answer">I prefer <strong>full-time work</strong> under a <strong>contract of employment</strong> – ideally within a <strong>long-term collaboration</strong>. I mostly work <strong>remotely</strong>.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">When can you start?<span class="faq-arrow"></span></button>
-      <div class="faq-answer"><strong>Immediately</strong> – I’m available to begin right away, or within a week if needed.</div>
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- ===== Scripts ===== -->
-
-  <script src="assets/js/faq.js" defer></script>
-  <script src="assets/js/footer-inline.js" defer></script>
-
-
-  <!-- Footer (wstrzykiwany) -->
-  <div data-footer></div>
-  <script src="assets/js/footer-inline.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Hamburger menu
-      const hamburger = document.querySelector('.nav-hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', function() {
-          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-          hamburger.setAttribute('aria-expanded', !expanded);
-          mobileMenu.classList.toggle('is-open');
-          hamburger.classList.toggle('is-open');
-        });
-        // Zamknij menu po kliknięciu w link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.remove('is-open');
-            hamburger.classList.remove('is-open');
-            hamburger.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    });
-  </script>
-  <script>
-    if (window.innerWidth <= 770 || screen.width <= 770) {
-      window.location.href = "/portfolio/contact-mobile.html";
-    }
-  </script>
-</body>
-</html>
+  }
+  margin: 0;
+}
+/* FAQ Section Styles */
+.faq-section {
+  margin: 48px 0 0 0;
+  padding: 0;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq-item:focus-within, .faq-item.open {
+  box-shadow: 0 4px 16px 0 rgba(149,84,156,0.10);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  text-align: left;
+  padding: 18px 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+}
+.faq-question::after {
+  content: '\25BC';
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s;
+  font-size: 1rem;
+}
+.faq-question[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #f6f6f6 !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: 0 24px;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+}
+.faq-item.open .faq-answer,
+.faq-question[aria-expanded="true"] + .faq-answer {
+  max-height: 200px;
+  padding: 16px 24px 24px 24px;
+  line-height: 1.5;
+}
+/* Podkreślany nagłówek sekcji (jak w projects) */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.section-header h2 {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 32px;
+  color: #222;
+  padding-bottom: 12px;
+  position: relative;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+}
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background:  #ffc022;
+  margin: 24px auto 12px;
+  transition: width 0.4s ease;
+}
+.section-header h2:hover::after {
+  width: 120px;
+}
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 18px;
+}
+/* Placeholder szary, wygaszony */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b0b0b0;
+  opacity: 1;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+body {
+  background: #fafafd;
+}
+.contact-section {
+  max-width: 520px;
+  margin: 40px auto 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+  padding: 40px 32px 32px 32px;
+  text-align: center;
+}
+.contact-header h2 {
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+.contact-header p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.contact-form label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #222;
+  text-align: left;
+  margin-bottom: 1px;
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: 10px 14px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  background: #fafafd;
+  color: #222;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #95549c;
+  outline: none;
+}
+.contact-form button {
+  background: #95549c;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 0;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.contact-form button:hover {
+  background: #7a3e8e;
+  transform: translateY(-2px) scale(1.03);
+}
+.contact-info {
+  margin-top: 24px;
+  color: #555;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.contact-info p {
+  text-align: center;
+  margin: 0 auto;
+}
+.linkedin-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact-info a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
