@@ -1,12 +1,7 @@
 <!-- File: projects/nanudy.html -->
 <!DOCTYPE html>
-<html lang="en" class="photography-page">
+<html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "photography-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Photography | Projects | Karolina Ogorzalek</title>
@@ -15,7 +10,8 @@
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body class="photography-page">
+<body>
+
   <div id="top"></div>
 
 
@@ -184,38 +180,43 @@
       }
     </style>
   </div>
+  <!-- Footer (wstrzykiwany) -->
   <div data-footer></div>
-<script src="assets/js/footer-inline.js" defer></script>
-
-  <!-- (opcjonalnie) jeśli używasz popupu do wideo -->
+  <script src="assets/js/footer-inline.js" defer></script>
   <script src="assets/js/video-popup.js" defer></script>
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.js-to-top').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
-  // Hamburger menu
-  const hamburger = document.querySelector('.nav-hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !expanded);
-      mobileMenu.classList.toggle('is-open');
-      hamburger.classList.toggle('is-open');
-    });
-    // Zamknij menu po kliknięciu w link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('is-open');
-        hamburger.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.js-to-top').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       });
+      // Hamburger menu
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
+        });
+        // Zamknij menu po kliknięciu w link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
     });
-  }
-});
-</script>
+  </script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/photography-mobile.html";
+    }
+  </script>
+</body>
 </html>
