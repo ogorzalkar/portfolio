@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/about-me.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-	<style>
+    <style>
   body { 
     background-color: #fff; 
     padding-top: 64px; 
@@ -58,29 +58,6 @@
       </div>
     </div>
   </nav>
-  <script>
-    const hamburger = document.querySelector('.nav-hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', function() {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !expanded);
-        mobileMenu.classList.toggle('is-open');
-        hamburger.classList.toggle('is-open');
-      });
-
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('is-open');
-          hamburger.classList.remove('is-open');
-          hamburger.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-  </script>
-
-</body>
 
       <span aria-hidden="true"></span>
     </div>
