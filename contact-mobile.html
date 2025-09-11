@@ -19,6 +19,21 @@
     body {
       padding-top: 64px !important;
     }
+    .mobile-nav-links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100vw;
+      background: #fff;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+      z-index: 999;
+      flex-direction: column;
+      padding: 16px 0;
+    }
+    .mobile-nav-links.is-open {
+      display: flex;
+    }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
