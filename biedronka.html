@@ -376,11 +376,10 @@
     </div>
 
     <!-- Product catalog - categories -->
-    <div class="project-intro">
+    <div class="project-intro" style="text-align:center; margin-top:64px;">
       <h3>Product catalog - categories</h3>
     </div>
-    <!-- Product catalog carousel (mobile only) -->
-    <div class="shakeomat-grid">
+    <div class="shakeomat-grid" style="justify-content:center;">
       <div class="shakeomat-col">
         <div class="shakeomat-caption">My recommendation</div>
         <img src="assets/images/project/UX-UI/Biedronka/category-1.jpg" alt="Category 1" />
@@ -397,11 +396,10 @@
     </div>
 
     <!-- Product catalog - subcategories -->
-    <div class="project-intro">
+    <div class="project-intro" style="text-align:center; margin-top:64px;">
       <h3>Product catalog - subcategories</h3>
     </div>
-    <!-- Product subcategories carousel (mobile only) -->
-    <div class="shakeomat-grid">
+    <div class="shakeomat-grid" style="justify-content:center;">
       <div class="shakeomat-col">
         <div class="shakeomat-caption">My recommendation</div>
         <img src="assets/images/project/UX-UI/Biedronka/sub-cat-1.jpg" alt="Subcategory 1" />
@@ -418,10 +416,10 @@
     </div>
 
     <!-- Shopping list - tiles -->
-    <div class="project-intro">
+    <div class="project-intro" style="text-align:center; margin-top:64px;">
       <h3>Shopping list - tiles</h3>
     </div>
-    <div class="shakeomat-grid">
+    <div class="shakeomat-grid" style="justify-content:center;">
       <div class="shakeomat-col">
         <div class="shakeomat-caption">My recommendation</div>
         <img src="assets/images/project/UX-UI/Biedronka/sub-cat-1.jpg" alt="Shopping list tile 1" />
@@ -441,10 +439,10 @@
     </div>
 
     <!-- Shopping list - checkbox -->
-    <div class="project-intro">
+    <div class="project-intro" style="text-align:center; margin-top:64px;">
       <h3>Shopping list - checkbox</h3>
     </div>
-    <div class="shakeomat-grid">
+    <div class="shakeomat-grid" style="justify-content:center;">
       <div class="shakeomat-col">
         <div class="shakeomat-caption">My recommendation</div>
         <img src="assets/images/project/UX-UI/Biedronka/lista-1.jpg" alt="Shopping list checkbox 1" />
@@ -466,11 +464,23 @@
 </div>
 
 
-
-    <!-- Dolny pasek przycisków -->
-    <div class="project-footer-bar" style="display:flex; justify-content:center; align-items:center; max-width:1200px; margin:72px auto 32px;">
-      <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
-    </div>
+ <!-- Dolny pasek przycisków -->
+      <div class="project-footer-bar" style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; max-width:1200px; margin:72px auto 32px;">
+        <a class="chip back" href="projects.html#all" style="justify-self:start;">Back to Projects</a>
+        <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+        <style>
+          @media (max-width: 770px) {
+            .project-footer-bar {
+              display: flex !important;
+              justify-content: center !important;
+              grid-template-columns: none !important;
+            }
+            .project-footer-bar .back {
+              display: none !important;
+            }
+          }
+        </style>
+      </div>
   </section>
 
 
