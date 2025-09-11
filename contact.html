@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "contact-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Karolina Ogorzalek</title>
   <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/projects.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
-  <link rel="stylesheet" href="assets/css/contact.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -207,15 +200,8 @@
   <!-- Footer (wstrzykiwany) -->
   <div data-footer></div>
   <script src="assets/js/footer-inline.js" defer></script>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.js-to-top').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      });
       // Hamburger menu
       const hamburger = document.querySelector('.nav-hamburger');
       const mobileMenu = document.getElementById('mobile-menu');
@@ -237,6 +223,10 @@
       }
     });
   </script>
-
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/contact-mobile.html";
+    }
+  </script>
 </body>
 </html>
