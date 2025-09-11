@@ -178,5 +178,17 @@
   <div data-footer></div>
   <script src="assets/js/footer-inline.js" defer></script>
   <script src="assets/js/video-popup.js" defer></script>
+  <script>
+  // Smooth scroll to top for .js-to-top button
+  document.addEventListener('DOMContentLoaded', function() {
+    const toTopBtn = document.querySelector('.js-to-top');
+    if (toTopBtn) {
+      toTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
 </body>
 </html>
