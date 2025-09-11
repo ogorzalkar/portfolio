@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "kz-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KZ | Projects | Karolina Ogorzalek</title>
@@ -103,7 +98,6 @@
       </div>
     </div>
 
-    
     <!-- Dolny pasek przycisków -->
       <div class="project-footer-bar" style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; max-width:1200px; margin:72px auto 32px;">
         <a class="chip back" href="projects.html#all" style="justify-self:start;">Back to Projects</a>
@@ -186,5 +180,10 @@
 
   <!-- (opcjonalnie) jeśli używasz popupu do wideo -->
   <script src="assets/js/video-popup.js" defer></script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/kz-mobile.html";
+    }
+  </script>
 </body>
 </html>
