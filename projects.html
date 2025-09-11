@@ -699,9 +699,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   </script>
 
-
-
-  
+  <style>
+@media (max-width: 770px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  }
+  body {
+    padding-top: 64px; /* lub wysokość Twojej nawigacji */
+  }
+}
+  </style>
 
 </body>
 </html>
