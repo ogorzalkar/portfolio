@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/about-me.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <script>
+    if (window.innerWidth <= 770) {
+      window.location.href = "about-me-mobile.html";
+    }
+  </script>
 </head>
 <body>
   <!-- Nav (nowoczesna, responsywna z hamburgerem) -->
@@ -173,36 +178,5 @@
   <div data-footer></div>
   <script src="assets/js/footer-inline.js" defer></script>
   <script src="assets/js/video-popup.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Scroll to top
-      document.querySelectorAll('.js-to-top').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      });
-      // Hamburger menu
-      const hamburger = document.querySelector('.nav-hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', function() {
-          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-          hamburger.setAttribute('aria-expanded', !expanded);
-          mobileMenu.classList.toggle('is-open');
-          hamburger.classList.toggle('is-open');
-        });
-        // Zamknij menu po kliknięciu w link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.remove('is-open');
-            hamburger.classList.remove('is-open');
-            hamburger.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    });
-  </script>
-
 </body>
 </html>
