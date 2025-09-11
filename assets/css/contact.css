@@ -65,7 +65,7 @@
   }
   .faq-question {
     width: 100%;
-    background: none;
+    background: white;
     border: none;
     outline: none;
     font-family: 'Roboto', sans-serif;
