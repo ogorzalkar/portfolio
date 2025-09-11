@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.innerWidth <= 770) {
-      window.location.href = "nanudy-mobile.html";
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nanudy | Projects | Karolina Ogorzalek</title>
@@ -248,47 +243,11 @@
       </div>
   </section>
 
+  <!-- Footer (wstrzykiwany) -->
   <div data-footer></div>
-
-  <style>
-    @media (max-width: 770px) {
-      .site-footer .footer-container {
-        max-width: 770px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-  </style>
-
-  <!-- Scripts -->
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script src="assets/js/video-popup.js" defer></script>
   <script>
-    // Carousel for .project-card (if present)
-    (function () {
-      const carousels = document.querySelectorAll('.project-card.carousel');
-      carousels.forEach((carousel) => {
-        const track  = carousel.querySelector('.carousel-track');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prev   = carousel.querySelector('.carousel-prev');
-        const next   = carousel.querySelector('.carousel-next');
-        const dots   = carousel.querySelectorAll('.carousel-dots button');
-        let index = 0;
-
-        function update(i) {
-          index = (i + slides.length) % slides.length;
-          const offset = carousel.clientWidth * index;
-          track.style.transform = `translateX(-${offset}px)`;
-          dots.forEach((d, j) => d.classList.toggle('is-active', j === index));
-        }
-
-        prev && prev.addEventListener('click', () => update(index - 1));
-        next && next.addEventListener('click', () => update(index + 1));
-        dots.forEach((d, i) => d.addEventListener('click', () => update(i)));
-        window.addEventListener('resize', () => update(index));
-        update(0);
-      });
-    })();
-
-    // Smooth scroll for "Scroll to top"
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.js-to-top').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -296,7 +255,6 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
-    });
       // Hamburger menu
       const hamburger = document.querySelector('.nav-hamburger');
       const mobileMenu = document.getElementById('mobile-menu');
@@ -316,44 +274,12 @@
           });
         });
       }
-
-    // Phone mockup carousel – FADE
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.phone-mockup').forEach((root) => {
-        const slides = root.querySelectorAll('.pm-slide');
-        const prev   = root.querySelector('.pm-prev');
-        const next   = root.querySelector('.pm-next');
-        let index = 0;
-
-        function go(i){
-          index = (i + slides.length) % slides.length;
-          slides.forEach((slide, idx) => {
-            slide.classList.toggle('is-active', idx === index);
-          });
-        }
-
-        prev?.addEventListener('click', () => go(index - 1));
-        next?.addEventListener('click', () => go(index + 1));
-
-        // Swipe support
-        let startX = null, pid = null;
-        const viewport = root.querySelector('.pm-viewport');
-        viewport.addEventListener('pointerdown', e => {
-          startX = e.clientX; pid = e.pointerId;
-          viewport.setPointerCapture(pid);
-        });
-        viewport.addEventListener('pointerup', e => {
-          if (startX == null) return;
-          const dx = e.clientX - startX;
-          if (Math.abs(dx) > 30) (dx < 0 ? go(index + 1) : go(index - 1));
-          startX = null; pid = null;
-        });
-
-        go(0);
-      });
     });
   </script>
-  <script src="assets/js/footer-inline.js" defer></script>
-  <script src="assets/js/video-popup.js" defer></script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/nanudy-mobile.html";
+    }
+  </script>
 </body>
 </html>
