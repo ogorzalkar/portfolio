@@ -1,0 +1,174 @@
+<!-- File: projects/govege.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taco Bell | Projects | Karolina Ogorzalek</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Kotwica do scroll-to-top -->
+  <div id="top"></div>
+
+  <!-- Nav (nowoczesna, responsywna z hamburgerem) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;gap:8px;">
+          <img src="assets/images/logo/logo.jpg" alt="Logo" class="logo-img" />
+          <span class="logo-text">Portfolio</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="mobile-menu" class="mobile-nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="about-me.html">About me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <section class="projects-section">
+    <!-- Header: breadcrumbs po lewej, tytuł wycentrowany -->
+    <div class="projects-header">
+      <p class="breadcrumbs">
+        <a class="crumb-back" href="projects.html#all">Projects</a>
+        <span class="crumb-sep">›</span>
+        <span class="crumb-current">Taco Bell</span>
+      </p>
+      <h2>Taco Bell</h2>
+      <span aria-hidden="true"></span>
+    </div>
+
+    <!-- Intro -->
+    <div class="project-intro">
+      <h3>Instagram Social Media Post Ideas</h3>
+      <p>Post Ideas for Taco Bell – a series of posts to create a cohesive Instagram feed.</p>
+    </div>
+
+    <!-- Hero -->
+    <div class="project-hero">
+      <img src="assets/images/project/SM/TacoBell/cover-TB.png" alt="Taco Bell - cover" loading="eager" decoding="async" />
+    </div>
+
+    <!-- Grid 3x3 -->
+    <div class="project-grid">
+      <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/3-TB.png" alt="" width="1200" height="1200" />
+      </div>
+  <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/2-TB.png" alt="" width="1200" height="1200" />
+      </div>
+
+      <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/9-TB.png" alt="" width="1200" height="1200" />
+      </div>
+      
+          <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/7-TB.png" alt="" width="1200" height="1200" />
+      </div>
+  <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/5-TB.png" alt="" width="1200" height="1200" />
+      </div>
+           
+       <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/8-TB.png" alt="" width="1200" height="1200" />
+      </div>
+  <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/6-TB.png" alt="" width="1200" height="1200" />
+      </div>
+      
+     
+       <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/4-TB.png" alt="" width="1200" height="1200" />
+      </div>
+  <!-- 1: statyczne zdjęcie -->
+      <div class="project-card2">
+        <img class="project-thumb" loading="lazy" decoding="async" src="assets/images/project/SM/TacoBell/1-TB.png" alt="" width="1200" height="1200" />
+      </div>
+
+       </div>
+    
+   
+  
+    <!-- Dolny pasek przycisków -->
+    <div class="project-footer-bar" style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; max-width:1200px; margin:72px auto 32px;">
+      <a class="chip back" href="projects.html#all" style="justify-self:start;">Back to Projects</a>
+      <a class="chip js-to-top" href="#top" style="justify-self:center;">Scroll to top</a>
+      <style>
+        @media (max-width: 770px) {
+          .project-footer-bar {
+            display: flex !important;
+            justify-content: center !important;
+            grid-template-columns: none !important;
+          }
+          .project-footer-bar .back {
+            display: none !important;
+          }
+        }
+      </style>
+    </div>
+  </section>
+  
+
+  <!-- Footer (wstrzykiwany) -->
+  <div data-footer></div>
+  <script src="assets/js/footer-inline.js" defer></script>
+  <script src="assets/js/video-popup.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.js-to-top').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+      // Hamburger menu
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('is-open');
+          hamburger.classList.toggle('is-open');
+        });
+        // Zamknij menu po kliknięciu w link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            hamburger.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+  <script>
+    if (window.innerWidth <= 770 || screen.width <= 770) {
+      window.location.href = "/portfolio/mixed-mobile.html";
+    }
+  </script>
+</body>
+</html>
