@@ -846,6 +846,17 @@ mintful-logo-wide-narrow
   color: #222;
 }
 
+.project-card2{
+  aspect-ratio: 4 / 5;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  transition: transform .18s ease, box-shadow .18s ease, outline-color .18s ease;
+  will-change: transform;
+  overflow: hidden;
+}
+
+
 /* MEDIA w kartach */
 .project-thumb,
 .project-card img{
